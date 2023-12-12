@@ -5,7 +5,7 @@ title = "Zypher Game Documentation"
 # The homepage contents
 [extra]
 lead = '<b>Z3</b> is a zkp-powered modular gaming framework.'
-url = "/docs/guide/introduction/"
+url = "/docs/guide/overview/"
 url_button = "Get started"
 repo_version = "v0.1.0"
 repo_license = "Open-source MIT License."
@@ -15,7 +15,7 @@ repo_url = "https://github.com/zypher-game/Z3"
 [[extra.menu.main]]
 name = "Docs"
 section = "docs"
-url = "/docs/guide/introduction/"
+url = "/docs/guide/overview/"
 weight = 10
 
 [[extra.menu.main]]
