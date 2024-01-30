@@ -25,8 +25,8 @@ url = "/blog/"
 weight = 20
 
 [[extra.list]]
-title = "ZK Engine"
-content = 'A zk engine library that developers can use to write zk circuits and plug-and-play zk functions, also support zkDSL/zkVM'
+title = "ZK Toolchain"
+content = 'A zk library that developers can use to write zk circuits and plug-and-play zk functions, also support zkDSL/zkVM'
 
 [[extra.list]]
 title = "Sovereign Rollup"
