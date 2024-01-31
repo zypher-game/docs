@@ -15,13 +15,16 @@ top = false
 +++
 
 ## Quick Start
+Learning the zk-powered game by programming a guessing game. [Guessing Game →](../guessing-game)
 
-Quick start and complete a simple game with zypher game framework. [Quick Start →](../quick-start/)
+## UZKGE
+Detailed introduction to zero-knowledge proofs and secret engine. [Quick Start →](../../uzkge/overview)
 
-## The Book
+## Z4
+Detailed introduction to multiple online real-time game. [Quick Start →](../../z4/overview)
 
-Detailed introduction to each components and functions
+## Zytron
+Detailed introduction to L3 game chain. [Quick Start →](../../zytron/overview)
 
 ## Contributing
-
-Find out how to contribute to Doks. [Contributing →](../../contributing/how-to-contribute/)
+Find out how to contribute to Doks. [Contributing →](../../contributing/how-to-contribute)

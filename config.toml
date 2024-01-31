@@ -1,7 +1,7 @@
 # The URL the site will be built for
-base_url = "https://infra.zypher.game"
-title = "Zypher Infra"
-description = "Zypher Game Framework Documentation | Zypher Infra Docs"
+base_url = "https://docs.zypher.game"
+title = "Zypher Games"
+description = "Zypher Games Framework Documentation | Zypher Infra Docs"
 
 # The site theme to use.
 theme = "adidoks"
@@ -58,7 +58,7 @@ theme_color = "#fff"
 
 # More about site's title
 title_separator = "|"  # set as |, -, _, etc
-title_addition = "Zypher Infra Documentation"
+title_addition = "Zypher Documentation"
 
 # Set date format in blog publish metadata
 timeformat = "%B %e, %Y" # e.g. June 14, 2021

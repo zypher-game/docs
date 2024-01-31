@@ -16,17 +16,17 @@ top = false
 
 👉 Make sure to read the [Code of Conduct](../code-of-conduct/).
 
-## Contribute to Z3
+## Contribute to Code
 
-👉 The Z3 code lives in the [`z3` repository](https://github.com/zypher-game/z3)
+👉 The code lives in the GitHub [`zypher-game`](https://github.com/zypher-game)
 
 - Follow the [GitHub flow](https://guides.github.com/introduction/flow/).
 - Follow the [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ### Create an issue
 
-- [Bug report](https://github.com/zypher-game/z3/issues/new?template=bug-report---.md)
-- [Feature request](https://github.com/zypher-game/z3/issues/new?template=feature-request---.md)
+- [Bug report](https://github.com/zypher-game/z4/issues/new?template=bug-report---.md)
+- [Feature request](https://github.com/zypher-game/z4/issues/new?template=feature-request---.md)
 
 ## Improve documentation
 

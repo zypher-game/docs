@@ -1,5 +1,5 @@
 +++
-title = "Zypher Infra Documentation"
+title = "Zypher Documentation"
 
 
 # The homepage contents
@@ -9,7 +9,7 @@ url = "/docs/guide/overview/"
 url_button = "Get started"
 repo_version = "v0.1.0"
 repo_license = "Open-source MIT License."
-repo_url = "https://github.com/zypher-game/Z3"
+repo_url = "https://github.com/zypher-game"
 
 # Menu items
 [[extra.menu.main]]
