@@ -1,8 +1,8 @@
 # Zypher Games Documentation
 
-[online read](docs.zypher.game)
+[Online](https://docs.zypher.game)
 
-### Install
+### Build from source
 - [install Zola](https://www.getzola.org/documentation/getting-started/installation/)
 - `zola serve` for dev
 - `zola build` for prod
