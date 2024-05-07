@@ -1,7 +1,7 @@
 # The URL the site will be built for
-base_url = "https://docs.zypher.game"
-title = "Zypher Games"
-description = "Zypher Games Framework Documentation | Zypher Infra Docs"
+base_url = "https://docs.zypher.network"
+title = "Zypher Network"
+description = "Zypher Game Framework Documentation | Zypher Network Docs"
 
 # The site theme to use.
 theme = "adidoks"
@@ -45,10 +45,10 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
-author = "Zypher Infra"
+author = "Zypher Network"
 github = "https://github.com/zypher-game"
-twitter = "https://twitter.com/Zypher_Games"
-email = "contact@zypher.game"
+twitter = "https://twitter.com/Zypher_Network"
+email = "neo@zypher.network"
 
 # Set HTML file language
 language_code = "en-US"
@@ -80,8 +80,8 @@ library = "katex"  # options: "katex", "mathjax". default is "katex".
 enable = true
 # this image will be used as fallback if a page has no image of its own
 image = "zypher-logo.svg" # TODO
-twitter_site = "Zypher_Games"
-twitter_creator = "Zypher_Games"
+twitter_site = "Zypher_Network"
+twitter_creator = "Zypher_Network"
 facebook_author = "Zypher_Games" # TODO
 facebook_publisher = "Zypher_Games" # TODO
 og_locale = "en_US"
@@ -90,7 +90,7 @@ og_locale = "en_US"
 [extra.schema]
 type = "Organization"
 logo = "zypher-logo.svg"
-twitter = "https://twitter.com/Zypher_Games"
+twitter = "https://twitter.com/Zypher_Network"
 linked_in = ""
 github = "https://github.com/zypher-game"
 section = "blog" # see config.extra.main~url
