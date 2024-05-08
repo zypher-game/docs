@@ -79,19 +79,19 @@ library = "katex"  # options: "katex", "mathjax". default is "katex".
 [extra.open]
 enable = true
 # this image will be used as fallback if a page has no image of its own
-image = "zypher-logo.svg" # TODO
+image = "logo-white.png"
 twitter_site = "Zypher_Network"
 twitter_creator = "Zypher_Network"
-facebook_author = "Zypher_Games" # TODO
-facebook_publisher = "Zypher_Games" # TODO
+# facebook_author = "Zypher_Games" # TODO
+# facebook_publisher = "Zypher_Games" # TODO
 og_locale = "en_US"
 
 ## JSON-LD
 [extra.schema]
 type = "Organization"
-logo = "zypher-logo.svg"
+logo = "logo-white.png"
 twitter = "https://twitter.com/Zypher_Network"
-linked_in = ""
+# linked_in = ""
 github = "https://github.com/zypher-game"
 section = "blog" # see config.extra.main~url
 ## Sitelinks Search Box
