@@ -82,8 +82,8 @@ enable = true
 image = "logo-white.png"
 twitter_site = "Zypher_Network"
 twitter_creator = "Zypher_Network"
-# facebook_author = "Zypher_Games" # TODO
-# facebook_publisher = "Zypher_Games" # TODO
+facebook_author = "Zypher_Network" # TODO
+facebook_publisher = "Zypher_Network" # TODO
 og_locale = "en_US"
 
 ## JSON-LD
