@@ -26,5 +26,8 @@ Detailed introduction to multiple online real-time game. [Quick Start →](../..
 ## Zytron
 Detailed introduction to L3 game chain. [Quick Start →](../../zytron/overview)
 
+## SDK
+Various games SDKs, plug-and-play zk circuits and usecases. [Quick Start →](../../sdk/shuffle)
+
 ## Contributing
 Find out how to contribute to Doks. [Contributing →](../../contributing/how-to-contribute)
