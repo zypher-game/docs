@@ -1,15 +1,16 @@
 +++
-title = "zkVM - RISC0"
-description = "Universal Z4 node based on RISC0-zkVM"
+title = "What's ZK"
+description = "A zero Knowledge Game Engine."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
-weight = 33
+weight = 2000
 sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-lead = 'Universal Z4 node based on RISC0-zkVM'
+section = "zk"
+lead = 'A zero Knowledge Game Engine'
 toc = true
 top = false
 +++

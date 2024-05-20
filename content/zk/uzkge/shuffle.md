@@ -4,11 +4,12 @@ description = "A zk-powered shuffle for cards"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
-weight = 25
+weight = 2001
 sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
+section = "zk"
 lead = 'A zk-powered shuffle for cards'
 toc = true
 top = false
