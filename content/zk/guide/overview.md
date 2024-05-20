@@ -4,11 +4,13 @@ description = "A Next-Gen Web3 Infrastructure for Autonomous Worlds & Zero Knowl
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
-weight = 10
+weight = 1000
 sort_by = "weight"
+section = "zk"
 template = "docs/page.html"
 
 [extra]
+section = "zk"
 lead = 'A Next-Gen Web3 Infrastructure for Autonomous Worlds & Zero Knowledge Game Engines'
 toc = true
 top = false
@@ -22,9 +24,6 @@ Detailed introduction to zero-knowledge proofs and secret engine. [Quick Start �
 
 ## Z4
 Detailed introduction to multiple online real-time game. [Quick Start →](../../z4/overview)
-
-## Zytron
-Detailed introduction to L3 game chain. [Quick Start →](../../zytron/overview)
 
 ## Contributing
 Find out how to contribute to Doks. [Contributing →](../../contributing/how-to-contribute)

@@ -5,7 +5,7 @@ title = "Zypher Documentation"
 # The homepage contents
 [extra]
 lead = 'Game infrastructure for Autonomous Open World, Featuring ZK + AI'
-url = "/docs/guide/overview/"
+url = "/zk/guide/overview/"
 url_button = "Get started"
 repo_version = "v0.1.0"
 repo_license = "Open-source GPLv3 License."
@@ -13,16 +13,22 @@ repo_url = "https://github.com/zypher-game"
 
 # Menu items
 [[extra.menu.main]]
-name = "Docs"
-section = "docs"
-url = "/docs/guide/overview/"
-weight = 10
-
-[[extra.menu.main]]
 name = "Blog"
 section = "blog"
 url = "/blog/"
+weight = 10
+
+[[extra.menu.main]]
+name = "ZK"
+section = "zk"
+url = "/zk/guide/overview/"
 weight = 20
+
+[[extra.menu.main]]
+name = "Zytron"
+section = "zytron"
+url = "/zytron/chain/overview/"
+weight = 30
 
 [[extra.list]]
 title = "Secret Engine"

@@ -9,6 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
+section = "zk"
 lead = "Contribute to ZypherGame, improve documentation, or submit to showcase."
 toc = true
 top = false

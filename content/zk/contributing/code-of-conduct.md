@@ -9,6 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
+section = "zk"
 lead = "Contributor Covenant Code of Conduct."
 toc = true
 top = false
