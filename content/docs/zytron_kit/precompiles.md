@@ -1,4 +1,20 @@
-# Precompiles
++++
+title = "Precompiles"
+description = "The precompiles in zytron kit"
+date = 2024-05-01T08:00:00+00:00
+updated = 2024-05-01T08:00:00+00:00
+draft = false
+weight = 4010
+sort_by = "weight"
+template = "docs/page.html"
+
+[extra]
+lead = 'The precompiles in zytron kit'
+toc = true
+top = false
++++
+
+## Precompiles
 
 Currently zytron provides the following precompilers, which are placed at different addresses:
 
@@ -12,12 +28,12 @@ Currently zytron provides the following precompilers, which are placed at differ
 
 | Contract Name | Address |
 | - | - |
-| AnemoiJive254 | 0x00000000000000000000000000000000000000014 | 
+| AnemoiJive254 | 0x00000000000000000000000000000000000000014 |
 
 Input parameters are encoded in the following form:
 
 ```solidity
-bytes32[] memory data = /* .. */ 
+bytes32[] memory data = /* .. */
 bytes memory input = abi.encode(data)
 
 address precompile = 0x00000000000000000000000000000000000000014;
@@ -28,8 +44,8 @@ precompile.staticcall(input);
 
 | Contract Name | Address |
 | - | - |
-| EdOnBN254PointAdd | 0x00000000000000000000000000000000000000015 | 
-| EdOnBN254ScalarMul | 0x00000000000000000000000000000000000000016 | 
+| EdOnBN254PointAdd | 0x00000000000000000000000000000000000000015 |
+| EdOnBN254ScalarMul | 0x00000000000000000000000000000000000000016 |
 
 
 EdOnBN254PointAdd:
@@ -61,7 +77,7 @@ bytes memory output = precompile.staticcall(abi.encode(x, y, s));
 
 | Contract Name | Address |
 | - | - |
-| VerifyMatchmaking | 0x00000000000000000000000000000000000000017 | 
+| VerifyMatchmaking | 0x00000000000000000000000000000000000000017 |
 
 Input parameters are encoded in the following form:
 
@@ -82,7 +98,7 @@ require(precompile.staticcall(abi.encode(verifier_params, inputs, outputs, commi
 
 | Contract Name | Address |
 | - | - |
-| VerifyMatchmaking | 0x00000000000000000000000000000000000000018 | 
+| VerifyMatchmaking | 0x00000000000000000000000000000000000000018 |
 
 Input parameters are encoded in the following form:
 

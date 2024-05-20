@@ -1,4 +1,20 @@
-# EdOnBN254 SDK
++++
+title = "Precompiles EdOnBN254(BabyJubJub)"
+description = "The precompiles EdOnBN254(BabyJubJub) in zytron kit"
+date = 2024-05-01T08:00:00+00:00
+updated = 2024-05-01T08:00:00+00:00
+draft = false
+weight = 4011
+sort_by = "weight"
+template = "docs/page.html"
+
+[extra]
+lead = 'The precompiles EdOnBN254(BabyJubJub) in zytron kit'
+toc = true
+top = false
++++
+
+## EdOnBN254 SDK
 
 We provide Solidity, Rust, Javascript (WebAssembly based) and C (FFI support) SDK.
 

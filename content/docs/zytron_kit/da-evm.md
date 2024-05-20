@@ -1,10 +1,10 @@
 +++
 title = "DA - EVM Chain"
 description = "Use an EVM chain as the DA layer"
-date = 2021-05-01T08:00:00+00:00
-updated = 2021-05-01T08:00:00+00:00
+date = 2024-05-01T08:00:00+00:00
+updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 49
+weight = 4103
 sort_by = "weight"
 template = "docs/page.html"
 

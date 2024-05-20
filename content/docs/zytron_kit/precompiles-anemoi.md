@@ -1,4 +1,20 @@
-# Anemoi Hash Function SDK
++++
+title = "Precompiles Anemoi Hash"
+description = "The precompiles Anemoi hash function in zytron kit"
+date = 2024-05-01T08:00:00+00:00
+updated = 2024-05-01T08:00:00+00:00
+draft = false
+weight = 4012
+sort_by = "weight"
+template = "docs/page.html"
+
+[extra]
+lead = 'The precompiles Anemoi hash function in zytron kit'
+toc = true
+top = false
++++
+
+## Anemoi Hash Function SDK
 
 Anemoi is a zk-friendly hash function.
 

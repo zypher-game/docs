@@ -1,8 +1,24 @@
-# Add Zytron Testnet
++++
+title = "What's Zytron Chain"
+description = "A L3 game chain."
+date = 2024-05-01T08:00:00+00:00
+updated = 2024-05-01T08:00:00+00:00
+draft = false
+weight = 4500
+sort_by = "weight"
+template = "docs/page.html"
+
+[extra]
+lead = 'A L3 game chain'
+toc = true
+top = false
++++
+
+## Add Zytron Testnet
 
 Zytron has three test networks. You can choose to use it according to your needs.
 
-## Zytron on Linea
+### Zytron on Linea
 
 |  Field   | Value  |
 |  ----  | ----  |
@@ -13,7 +29,7 @@ Zytron has three test networks. You can choose to use it according to your needs
 | Currency | ETH |
 | Bridge |  |
 
-## Zytron on B2
+### Zytron on B2
 
 |  Field   | Value  |
 |  ----  | ----  |
@@ -24,7 +40,7 @@ Zytron has three test networks. You can choose to use it according to your needs
 | Currency | BTC |
 | Bridge |  |
 
-## Zytron on Celestia
+### Zytron on Celestia
 
 |  Field   | Value  |
 |  ----  | ----  |

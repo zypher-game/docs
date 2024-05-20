@@ -4,7 +4,7 @@ description = "A Next-Gen Web3 Infrastructure for Autonomous Worlds & Zero Knowl
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
-weight = 10
+weight = 1000
 sort_by = "weight"
 template = "docs/page.html"
 

@@ -1,4 +1,20 @@
-# Shuffle SDK
++++
+title = "Precompiles Shuffle"
+description = "The precompiles Shuffle in zytron kit"
+date = 2024-05-01T08:00:00+00:00
+updated = 2024-05-01T08:00:00+00:00
+draft = false
+weight = 4013
+sort_by = "weight"
+template = "docs/page.html"
+
+[extra]
+lead = 'The precompiles Shuffle in zytron kit'
+toc = true
+top = false
++++
+
+## Shuffle SDK
 
 We provide Solidity, Rust, Javascript (WebAssembly based) and C (FFI support) SDK.
 
