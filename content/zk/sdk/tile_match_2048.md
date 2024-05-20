@@ -4,11 +4,12 @@ description = "2048 circuit SDK."
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 52
+weight = 5002
 sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
+section = "zk"
 lead = '2048 circuit SDK.'
 toc = true
 top = false

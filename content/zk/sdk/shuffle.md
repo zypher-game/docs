@@ -4,11 +4,12 @@ description = "Hide card information and ensure card security."
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 51
+weight = 5001
 sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
+section = "zk"
 lead = 'Hide card information and ensure card security.'
 toc = true
 top = false
