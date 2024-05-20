@@ -25,5 +25,8 @@ Detailed introduction to zero-knowledge proofs and secret engine. [Quick Start �
 ## Z4
 Detailed introduction to multiple online real-time game. [Quick Start →](../../z4/overview)
 
+## ZK SDK
+Various games SDKs, plug-and-play zk circuits and usecases. [Quick Start →](../../sdk/shuffle)
+
 ## Contributing
 Find out how to contribute to Doks. [Contributing →](../../contributing/how-to-contribute)
