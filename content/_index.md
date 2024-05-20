@@ -27,7 +27,7 @@ weight = 20
 [[extra.menu.main]]
 name = "Zytron"
 section = "zytron"
-url = "/zytron/kit/overview/"
+url = "/zytron/chain/overview/"
 weight = 30
 
 [[extra.list]]

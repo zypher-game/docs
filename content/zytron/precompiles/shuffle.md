@@ -1,10 +1,10 @@
 +++
-title = "Precompiles Shuffle"
+title = "Shuffle"
 description = "The precompiles Shuffle in zytron kit"
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 4013
+weight = 4103
 sort_by = "weight"
 template = "docs/page.html"
 

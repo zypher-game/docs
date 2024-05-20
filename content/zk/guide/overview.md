@@ -25,8 +25,5 @@ Detailed introduction to zero-knowledge proofs and secret engine. [Quick Start �
 ## Z4
 Detailed introduction to multiple online real-time game. [Quick Start →](../../z4/overview)
 
-## Zytron
-Detailed introduction to L3 game chain. [Quick Start →](../../zytron/overview)
-
 ## Contributing
 Find out how to contribute to Doks. [Contributing →](../../contributing/how-to-contribute)

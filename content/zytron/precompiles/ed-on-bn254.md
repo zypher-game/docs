@@ -1,10 +1,10 @@
 +++
-title = "Precompiles EdOnBN254(BabyJubJub)"
+title = "EdOnBN254(BabyJubJub)"
 description = "The precompiles EdOnBN254(BabyJubJub) in zytron kit"
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 4011
+weight = 4101
 sort_by = "weight"
 template = "docs/page.html"
 

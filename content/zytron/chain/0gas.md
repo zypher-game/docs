@@ -1,10 +1,10 @@
 +++
-title = "Zytron Chain - 0 GAS"
+title = "0 GAS"
 description = "Zytron chain is 0 gas"
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 4501
+weight = 4001
 sort_by = "weight"
 template = "docs/page.html"
 
