@@ -18,4 +18,22 @@ top = false
 ## Contents
 Players take turns to encrypt and shuffle cards, resulting in a deck which is “sealed” & randomly ordered; it offers a superior solution that traditional RNGs, i.e.VRF cannot.
 
+### mental poker
+The mental poker protocol is not a single protocol, but rather a collection of sub-protocols, each responsible for a specific action.
+
+- Key Generation:
+  – Generate a public-private key pair for each player.
+  – Aggregate all players’ public keys to generate a single public key.
+
+- Masking:
+  - A masking function is an ElGamal encryption function under an ag-
+gregated public key.
+
+- Shuffle and re-masking:
+  – Perform shuffling operations to randomize the cards.
+  – Re-mask the shuffled cards.
+
+- Unmask:
+  – Decode the cards to obtain the real card information.
+
 ## zk-shuffle as a service
