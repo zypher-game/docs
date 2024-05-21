@@ -1,6 +1,6 @@
 +++
 title = "Overview"
-description = "A Next-Gen Web3 Infrastructure for Autonomous Worlds & Zero Knowledge Game Engines."
+description = "Game infrastructure for Autonomous Free World, Featuring ZK + AI"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -11,7 +11,7 @@ template = "docs/page.html"
 
 [extra]
 section = "zk"
-lead = 'A Next-Gen Web3 Infrastructure for Autonomous Worlds & Zero Knowledge Game Engines'
+lead = 'Game infrastructure for Autonomous Free World, Featuring ZK + AI'
 toc = true
 top = false
 +++
@@ -19,14 +19,14 @@ top = false
 ## Quick Start
 Learning the zk-powered game by programming a guessing game. [Guessing Game →](../guessing-game)
 
-## UZKGE
-Detailed introduction to zero-knowledge proofs and secret engine. [Quick Start →](../../uzkge/overview)
+## Secret Engine
+Detailed introduction to zero-knowledge proofs and secret engine. [Quick Start →](../../secret/overview)
 
-## Z4
-Detailed introduction to multiple online real-time game. [Quick Start →](../../z4/overview)
+## Aggregate World Engine
+Detailed introduction to aggregate world engine and zk-game SDKs. [Quick Start →](../../aw/overview)
 
-## ZK SDK
-Various games SDKs, plug-and-play zk circuits and usecases. [Quick Start →](../../sdk/shuffle)
+## Z4 Framework
+Detailed introduction to multiple online real-time game framework. [Quick Start →](../../z4/overview)
 
 ## Contributing
 Find out how to contribute to Doks. [Contributing →](../../contributing/how-to-contribute)

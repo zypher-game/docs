@@ -1,5 +1,5 @@
 +++
-title = "uzkge"
+title = "Secret engine"
 description = "Quick start and complete a simple game with uzkge."
 date = 2025-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
