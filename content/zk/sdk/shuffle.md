@@ -20,8 +20,9 @@ top = false
 - Language: javascript/typescript
 
 ## Overview
-幾乎所有多人的卡牌類型，都需要一個公平且不可預測的洗牌機制，單純使用鏈上隨機數無法滿足此需求，
-因此 Zypher Games 提供 Shuffle solution，使用流程如下:
+Almost all multi-player card games require a fair and unpredictable shuffling mechanism.
+Simply using random numbers on the chain cannot meet this demand.
+Therefore, Zypher provides Shuffle solution, and the usage process is as follows.
 
 
 ```mermaid
@@ -48,35 +49,35 @@ graph LR;
     end
 ```
 
-主要分為：
+Include:
 
-- 賽局開始階段
-  - 所有玩家提供自己的 public key，用來生成該賽局的 game key。
-  - 我們透過 game key，將原本公開的牌卡，mask 成該賽局專用的牌組。
+- The beginning of the game
+   - All players provide their own public key, which is used to generate the game aggregated key for the game.
+   - We use the aggregated key to mask the originally public cards into a deck dedicated to the game.
 
-- 洗牌階段
-  - 每位玩家輪流基於前一個牌組狀態，打亂牌組並更新牌堆。
-  - 更新牌堆時，我們會通過 ZK 機制，確保玩家有基於我們的規則來打亂牌組。
+- Shuffling stage
+   - Each player takes turns shuffling the deck and updating the deck based on the previous deck state.
+   - When updating the deck, we will use the ZK mechanism to ensure that players have the ability to disrupt the deck based on our rules.
 
-- 開牌階段
-  - 針對要顯示出結果的牌，湊齊所有玩家的 reveal token 即可顯示出正確的牌卡內容。
-  - 提交 token 時，合約可以通過 ZK 機制確保每位玩家有提供符合規則的 token。
-  - 如果只有單一玩家要看到自己手牌，則其他玩家需要算出其手牌的對應 token 並交給該玩家。
-  - 如果是要完全公開此牌卡，則所有玩家將對應的 token 交給合約，透過鏈上計算，確認牌卡。
+- opening stage
+   - For the card whose result is to be displayed, the correct card content can be displayed by gathering the reveal tokens of all players.
+   - When submitting reveal tokens, the contract can ensure that each player provides the tokens that comply with the rules through the ZK mechanism.
+   - If only a single player wants to see his hand, other players need to calculate the corresponding token of their hand and give it to that player.
+   - If the card is to be fully disclosed, all players will hand over the corresponding tokens to the contract, and the card will be confirmed through on-chain calculations.
 
 
-以下我們用一個標準遊戲的進行過程來演示個階段如何使用我們所提供的 Shuffle solution.
+Below we use a standard game process to demonstrate how to use the Shuffle solution we provide at each stage.
 
 ## Installation
 
-我們將前端使用的 WASM 及 types，與合約端使用到的 verifier interfaces 放在 NPM packages 中，
-可以透過 npm 下載到開發環境中：
+We package the WASM and types used on the front-end and the verifier interfaces used on the contract, and upload to NPM packages.
+It can be downloaded to the development environment through npm:
 
 ```bash
 $ npm i @zypher-game/secret-engine
 ```
 
-合約部分，請從下表中挑選合適的 verifiers 地址：
+For the contract part, please select the verifiers address from the table below:
 
 | Network | Name | Address |
 |:------: | :--: | :------ |
@@ -100,7 +101,7 @@ sequenceDiagram
     S -->>- C: game key
 ```
 
-遊戲開始階段，每位玩家提供自己的 public key。有了所有玩家的 public keys 後，合約上可以計算出該賽局專用的 game key。
+At the beginning of the game, each player provides his or her public key. After having the public keys of all players, the contract can calculate the game aggregated key specific to the game.
 
 ```ts
 /**
@@ -127,9 +128,9 @@ const key = SE.generate_key()
 // send key.pkxy to smart contract to aggregate the game-key
 ```
 
-玩家將自己的 `key.pkxy` 提供給合約，用來產出該賽局的加密密鑰。
+Players provide their `key.pkxy` to the contract to generate the encryption key for the game.
 
-在所有玩家都提供完 public keys 後，合約上可以透過 `ZgRevealVerifier::aggregateKeys` 生成 game key：
+After all players have provided public keys, the game aggregated key can be generated through `ZgRevealVerifier::aggregateKeys` on the contract:
 
 ```solidity
 import { ZgRevealVerifier, Point } from "@zypher-game/secret-engine/Verifiers.sol";
@@ -148,7 +149,7 @@ contract Game {
 
 ## Mask the Game Deck
 
-現在，玩家可以從合約中取得當前賽局專用的 game key，而第一位洗牌的玩家，在洗牌之前，需要先透過 game key 將整個牌組 mask。
+Now, players can obtain the game aggregated key specific to the current game from the contract, and the first player to shuffle the deck needs to mask the entire deck with the game key before shuffling the deck.
 
 ```mermaid
 sequenceDiagram
@@ -162,7 +163,7 @@ sequenceDiagram
     C -->>- S: Shuffle the deck
 ```
 
-這部分我們在 client 端進行：
+We do this part on the client side:
 
 ```ts
 // Read from Game::gameKey above
@@ -191,7 +192,7 @@ const pkc = SE.refresh_joint_key(gameKey, DECK_SIZE)
 const maskedDeck = SE.init_masked_cards(gameKey, DECK_SIZE)
 ```
 
-第一位玩家在將 deck masked 後，直接在本地進行洗牌即可，我們繼續進行到下一節。
+After the first player has masked the deck, he can shuffle the deck directly locally, and we continue to the next section.
 
 ## Shuffle the Game Deck
 
@@ -214,8 +215,8 @@ sequenceDiagram
     S --> C: next
 ```
 
-如果是第一位洗牌的玩家，我們直接將前一步驟的結果，調整為跟合約相同的規格。
-若是第二位以後的玩家，則直接以合約上查詢到的牌組來接著洗。
+If it is the first player to shuffle the cards, we directly adjust the result of the previous step to the same specifications as the contract.
+If it is the second player or later, the deck will be shuffled directly with the deck found on the contract.
 
 ```ts
 /** @type {[Hex, Hex, Hex, Hex][]} */
@@ -232,7 +233,7 @@ const shuffled = SE.shuffle_cards(gameKey, deckBefore)
 // Send pkc & shuffled.cards & shuffled.proof to the game contract.
 ```
 
-當 Client 端完成洗牌後，將洗牌前後的 deck 與 proof 以及 pkc 交給合約來驗證並更新 deck。
+When the client completes the shuffling, the previous and new deck, proof and pkc are submitting to the contract to verify and update the deck.
 
 ```solidity
 import { ZgShuffleVerifier } from "@zypher-game/secret-engine/Verifiers.sol";
@@ -306,9 +307,9 @@ contract Game {
 
 ## Submit ZK Reveal Tokens
 
-在所有玩家都 shuffled deck 後，現在如果想要任一張卡牌的原始內容，必須搜集其他所有玩家提供的 ZK 資訊 (reveal token) 才能解開。
+After all players have shuffled the deck, if player want the "value" of any card, they must collect the ZK information (reveal token) provided by all other players to unlock it.
 
-當玩家提交卡牌 reveal tokens 時，可以我們提供的 Reveal Verifier 確保其正確性：
+When players submit card reveal tokens, they can ensure their correctness with the Reveal Verifier we provide:
 
 ```mermaid
 sequenceDiagram
@@ -339,7 +340,7 @@ sequenceDiagram
     RV -->> S: verified
 ```
 
-要產出任一張卡牌的 ZK reveal token，可在 client 端利用玩家的 secret key 計算得出：
+To generate the ZK reveal token of any card, it can be calculated on the client side using the player's secret key:
 
 ```ts
 // Read from the Game contract deck, format the card into Hex string form:
@@ -358,7 +359,7 @@ const res = SE.reveal_card_with_snark(sk, card)
 // Send reveal token (res.card) & proof (res.snark_proof) to contract to provide to other players
 ```
 
-當合約收到 ZK reveal token 與 proof 後，可以即時線上驗證：
+When the contract receives the ZK reveal token and proof, it can be verified online instantly:
 
 ```solidity
 import { ZgRevealVerifier, Point } from "@zypher-game/secret-engine/Verifiers.sol";
@@ -395,14 +396,14 @@ contract Game {
 }
 ```
 
-當收集足夠量的 reveal tokens 後，我們接著算出其代表的卡牌。
+After collecting a sufficient number of reveal tokens, player will get the card's "value".
 
 ## Reveal Card
 
-計算方式有兩種，一種是在 client 端計算，另一種是在合約上計算：
+There are two calculation methods, one is calculated on the client side, and the other is calculated on the contract:
 
-- 本地揭露:
-  - 透過其他玩家提供的 reveal tokens，在本地揭露僅有自己可以看到結果的卡牌：
+- Local:
+   - Through reveal tokens provided by other players, player can locally reveal cards whose results only player can see:
 
     ```ts
     /** @type {number} */
@@ -410,8 +411,8 @@ contract Game {
     // 8 (0 - 51)
     ```
 
-- 合約上公開:
-  - 所有玩家都提供 reveal tokens，合約透過 Reveal Verifier 揭露該卡牌：
+- Public in the contract:
+   - All players provide reveal tokens, and the contract reveals the card through Reveal Verifier:
 
     ```solidity
     import { ZgRevealVerifier, MaskedCard } from "@zypher-game/secret-engine/Verifiers.sol";
@@ -423,4 +424,4 @@ contract Game {
     // 8
     ```
 
-透過以上兩種方式，便可以達成常見的卡牌洗牌與開牌過程。
+Through the above two methods, the common card shuffling and opening process can be achieved.
