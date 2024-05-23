@@ -3,7 +3,7 @@ title = "Markdown Syntax Guide"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 date = 2021-04-20T09:19:42+00:00
 updated = 2021-04-20T09:19:42+00:00
-draft = false
+draft = true
 template = "blog/page.html"
 
 [taxonomies]

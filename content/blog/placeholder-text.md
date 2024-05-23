@@ -3,7 +3,7 @@ title = "Placeholder Text"
 description = "Placeholder Text"
 date = 2021-04-10T09:19:42+00:00
 updated = 2021-04-10T09:19:42+00:00
-draft = false
+draft = true
 template = "blog/page.html"
 
 [taxonomies]
