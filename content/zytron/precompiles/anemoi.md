@@ -59,6 +59,15 @@ let data = ethabi::encode(&[
 ## Javascript SDK
 
 ```javascript
+const wasm = require('./pkg/wasm.js');
+
+let f1 = "0x2f8dd1f1a7583c42c4e12a44e110404c73ca6c94813f85835da4fb7bb1301d4a";
+let f2 = "0x1ee678a0470a75a6eaa8fe837060498ba828a3703b311d0f77f010424afeb025";
+let f3 = "0x2042a587a90c187b0a087c03e29c968b950b1db26d5c82d666905a6895790c0a";
+
+ret = wasm.anemoi_hash([f1, f2, f3]);
+console.log(ret)
+
 
 ```
 
