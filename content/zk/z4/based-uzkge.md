@@ -18,6 +18,8 @@ top = false
 ## Contents
 In z4 engine, developers only need to implement an interface and configure some startup parameters, and then will get a complete z4 game node.
 
+`z4 new my-game` will generate new Z4 game template.
+
 ### Handler
 
 `Handler` trait is the core interface. Developers can implement the game logic in it, and then they can directly use the z4 engine to run it. This interface including `accept` room events from the chain, `create` room events when the room is accepted by this node, and also supporting events when nodes go online and offline (connected and disconnected with websocket), and finally how to handle user request events in general.
@@ -135,6 +137,25 @@ Supports three methods, corresponding to different return value types. `add_all`
 ### Run on Z4 !
 Run the defined `Handler` to get a complete z4 node, it's simple!
 
+let's create `.env` file in current directory.
+
+```
+NETWORK=localhost
+GAMES=0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+SECRET_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 # Hardhat default sk!
+# START_BLOCK=1 # if not set, will sync from latest block
+# RPC_ENDPOINTS=https://xxx.com,https://xxxx.com
+# URL_HTTP=http://127.0.0.1:8080
+# URL_WEBSOCKET=ws://127.0.0.1:8000
+# HTTP_PORT=8080
+# WS_PORT=8000
+# AUTO_STAKE=true # if true, will stake when starting with URL_HTTP & URL_WEBSOCKET
+# ROOM_MARKET=0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 # if game and room market not the same contract
+# RUST_LOG=info
+```
+
+And now, let's run z4 node!
+
 ```rust
 use z4_engine::{Config, Engine};
 
@@ -145,27 +166,11 @@ impl Handler for MyHandler { ... }
 
 #[tokio::main]
 async fn main() {
-    dotenv::dotenv().ok();
-
-    let network = std::env::var("NETWORK").unwrap();
-    let game = std::env::var("GAME").unwrap();
-    let secret_key = std::env::var("SECRET_KEY").unwrap();
-    let start_block = std::env::var("START_BLOCK").ok().map(|v| v.parse().unwrap());
-    let server = std::env::var("PUBLIC_SERVER").unwrap();
-    let http_port = std::env::var("HTTP_PORT").unwrap_or("8080".to_owned()).parse().unwrap();
-    let ws_port = std::env::var("WS_PORT").unwrap_or("8000".to_owned()).parse().unwrap();
-
-    let mut config = Config::default();
-    config.http_port = http_port;
-    config.ws_port = Some(ws_port);
-    config.secret_key = secret_key.to_owned();
-    config.chain_network = network;
-    config.chain_start_block = start_block;
-    config.games = vec![game.to_owned()];
-    config.auto_stake = true;
-    config.http = server;
-
-    Engine::<MyHandler>::init(config).run().await.expect("Down");
+    let config = Config::from_env().unwrap();
+    Engine::<MyHandler>::init(config)
+        .run()
+        .await
+        .expect("Down");
 }
 ```
 

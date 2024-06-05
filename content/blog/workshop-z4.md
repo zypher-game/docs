@@ -34,12 +34,17 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # use stable rustc
 rustup default stable
 
-# create new z4 game server directory
-cargo new shoot
+# install z4 command
+cargo install z4
+
+# generate new game with z4 command
+z4 new --name my-game
+
+cd my-game
 ```
 
-In the demo project, we add z4 to dependency, because z4 not upload to crates.io, so, we use git path.
-`z4-engine = { git = "https://github.com/zypher-game/z4" }`
+In the demo project, we will see z4 in dependency.
+`z4-engine = "0.1"`
 
 ## Step 1: Deploy standard Z4 game contract
 We have two options:
@@ -55,10 +60,11 @@ npm install
 # deploy stardard game contract
 npm run deploy
 ```
-Then, we will get the game contract address in public/xx.json
+Then, we will get the game contract address in terminal output.
 
 - we can also do some custom development based on the Z4 standard game contract.
 Contract is [here](https://github.com/zypher-game/z4/blob/main/contracts/solidity/contracts/SimpleGame.sol).
+And now the default contracts will at `contracts/` and only the solidity files, because solidity is default, you can choose other smart contract template when new a game project.
 
 ```solidity
 contract SimpleGame is RoomMarket {
@@ -98,7 +104,12 @@ impl Handler for ShootHandler {
     }
 
     // create new game room
-    async fn create(peers: &[(Address, PeerId, [u8; 32])], _params: Vec<u8>, _rid: RoomId) -> (Self, Tasks<Self>) {
+    async fn create(
+        peers: &[(Address, PeerId, [u8; 32])],
+        _params: Vec<u8>,
+        _rid: RoomId,
+        _seed: [u8; 32],
+    ) -> (Self, Tasks<Self>) {
         // here we create ShootHandler
     }
 
@@ -193,20 +204,27 @@ After we finished writing the circuit, we found that it is actually very difficu
 
 ## Step 4: Running Z4 node
 
-After we have completed the logic of the game, we need to run it. Configure some parameters.
+After we have completed the logic of the game, we need to run it. Configure some parameters in `.env` file, if not exists, copy `.env-template`.
+in .env:
+```
+NETWORK=localhost
+GAMES=0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+SECRET_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 # Hardhat default sk!
+# START_BLOCK=1 # if not set, will sync from latest block
+# RPC_ENDPOINTS=https://xxx.com,https://xxxx.com
+# URL_HTTP=http://127.0.0.1:8080
+# URL_WEBSOCKET=ws://127.0.0.1:8000
+# HTTP_PORT=8080
+# WS_PORT=8000
+# P2P_PORT=7364
+# AUTO_STAKE=true # if true, will stake when starting with URL_HTTP & URL_WEBSOCKET
+# ROOM_MARKET=0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 # if game and room market not the same contract
+# RUST_LOG=info
+```
+we need change games contract address, z4 node account secret key, and other configures. Next we run z4!
 
 ```rust
-let mut config = Config::default();
-config.http_port = http_port;
-config.ws_port = Some(ws_port);
-config.secret_key = secret_key.to_owned();
-config.chain_network = "network";
-config.chain_start_block = start_block;
-config.games = vec![game.to_owned()];
-config.auto_stake = true;
-config.url_http = "server_url";
-config.url_websocket = "server_url";
-
+let config = Config::from_env().unwrap();
 Engine::<ShootHandler>::init(config).run().await.expect("Down");
 ```
 
