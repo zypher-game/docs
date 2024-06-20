@@ -24,31 +24,31 @@ Zytron has three test networks. You can choose to use it according to your needs
 |  Field   | Value  |
 |  ----  | ----  |
 | Network Name  | Zytron Linea(Sepolia) Testnet |
-| RPC | http://linea-testnet-zytron.zypher.game:8545/ |
+| RPC | https://linea-testnet-zytron.zypher.game/ |
 | ChainId | 50098 |
-| Explorer | http://linea-testnet-zytron-blockscout.zypher.game/ |
+| Explorer | https://linea-testnet-zytron-blockscout.zypher.game/ |
 | Currency | ETH |
-| Bridge |  |
+| Bridge | https://zytron-testnet-bridge.zypher.game/ |
 
 ### Zytron on B2
 
 |  Field   | Value  |
 |  ----  | ----  |
 | Network Name  | Zytron B2 Testnet |
-| RPC | http://b2-testnet-zytron.zypher.game:8545/ |
+| RPC | https://b2-testnet-zytron.zypher.game/ |
 | ChainId | 50097 |
-| Explorer | http://b2-testnet-zytron-blockscout.zypher.game/ |
+| Explorer | https://b2-testnet-zytron-blockscout.zypher.game/ |
 | Currency | BTC |
-| Bridge |  |
+| Bridge | https://zytron-testnet-bridge.zypher.game/ |
 
 ### Zytron on Celestia
 
 |  Field   | Value  |
 |  ----  | ----  |
 | Network Name  | Zytron Celestia Testnet |
-| RPC | http://zytron-testnet.zypher.game:8545/ |
+| RPC | https://zytron-testnet.zypher.game/ |
 | ChainId | 80085 |
-| Explorer | http://blockscout-rollkit-zytron-testnet.zypher.game/ |
+| Explorer | https://blockscout-rollkit-zytron-testnet.zypher.game/ |
 | Currency | ETH |
 | Bridge <sup>1</sup> | -- |
 
