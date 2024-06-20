@@ -23,12 +23,12 @@ We provide Rust, Javascript (WebAssembly based) and C (FFI support) SDK.
 
 | Crate Name | crates | docs.rs |
 | - | - | - |
-| zmatchmaking | --- | ![](https://img.shields.io/docsrs/zmatchmaking) |
+| zmatchmaking | ![](https://img.shields.io/crates/v/zmatchmaking) | ![](https://img.shields.io/docsrs/zmatchmaking) |
 
 Add dependency to Cargo.toml
 
 ```toml
-zmatchmaking = { git = "https://github.com/zypher-game/uzkge.git" }
+zmatchmaking = "0.1"
 ```
 
 Use the following code:

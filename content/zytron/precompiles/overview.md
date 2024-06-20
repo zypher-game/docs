@@ -99,7 +99,7 @@ require(precompile.staticcall(abi.encode(verifier_params, inputs, outputs, commi
 
 | Contract Name | Address |
 | - | - |
-| VerifyMatchmaking | 0x00000000000000000000000000000000000000018 |
+| Shuffle | 0x00000000000000000000000000000000000000018 |
 
 Input parameters are encoded in the following form:
 

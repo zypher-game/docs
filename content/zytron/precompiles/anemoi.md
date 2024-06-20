@@ -25,12 +25,12 @@ We provide Solidity, Rust, Javascript (WebAssembly based) and C (FFI support) SD
 
 | Crate Name | crates | docs.rs |
 | - | - | - |
-| uzkg | ![](https://img.shields.io/crates/v/uzkg) | ![](https://img.shields.io/docsrs/uzkg) |
+| uzkge | ![](https://img.shields.io/crates/v/uzkge) | ![](https://img.shields.io/docsrs/uzkge) |
 
 Add dependency to Cargo.toml
 
 ```toml
-uzkge = { git = "https://github.com/zypher-game/uzkge.git" }
+uzkge = "0.1"
 ```
 
 Use the following code:
