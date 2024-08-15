@@ -27,6 +27,7 @@ Zytron have mainnet on linea now!
 | Explorer | https://linea-mainnet-zytron-blockscout.zypher.game/ |
 | Currency | ETH |
 | Bridge | https://zytron-mainnet-bridge.zypher.game |
+| Safe Wallet | https://multisig.zytron.io/ |
 
 ## Zytron Testnet
 
