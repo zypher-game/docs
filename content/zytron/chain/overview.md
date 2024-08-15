@@ -15,9 +15,23 @@ toc = true
 top = false
 +++
 
-## Add Zytron Testnet
+## Zytron Mainnet
 
-Zytron has three test networks. You can choose to use it according to your needs.
+Zytron have mainnet on linea now!
+
+|  Field   | Value  |
+|  ----  | ----  |
+| Network Name  | Zytron Linea |
+| RPC | https://linea-mainnet-zytron.zypher.game/ |
+| ChainId | 9901 |
+| Explorer | https://linea-mainnet-zytron-blockscout.zypher.game/ |
+| Currency | ETH |
+| Bridge | https://zytron-mainnet-bridge.zypher.game |
+| Safe Wallet | https://multisig.zytron.io/ |
+
+## Zytron Testnet
+
+Zytron has two test networks. You can choose to use it according to your needs.
 
 ### Zytron on Linea
 
@@ -28,17 +42,6 @@ Zytron has three test networks. You can choose to use it according to your needs
 | ChainId | 50098 |
 | Explorer | https://linea-testnet-zytron-blockscout.zypher.game/ |
 | Currency | ETH |
-| Bridge | https://zytron-testnet-bridge.zypher.game/ |
-
-### Zytron on B2
-
-|  Field   | Value  |
-|  ----  | ----  |
-| Network Name  | Zytron B2 Testnet |
-| RPC | https://b2-testnet-zytron.zypher.game/ |
-| ChainId | 50097 |
-| Explorer | https://b2-testnet-zytron-blockscout.zypher.game/ |
-| Currency | BTC |
 | Bridge | https://zytron-testnet-bridge.zypher.game/ |
 
 ### Zytron on Celestia
