@@ -44,15 +44,4 @@ Zytron has two test networks. You can choose to use it according to your needs.
 | Currency | ETH |
 | Bridge | https://zytron-testnet-bridge.zypher.game/ |
 
-### Zytron on Celestia
 
-|  Field   | Value  |
-|  ----  | ----  |
-| Network Name  | Zytron Celestia Testnet |
-| RPC | https://zytron-testnet.zypher.game/ |
-| ChainId | 80085 |
-| Explorer | https://blockscout-rollkit-zytron-testnet.zypher.game/ |
-| Currency | ETH |
-| Bridge <sup>1</sup> | -- |
-
-> <sup>1</sup>Zytron on Celestia has no bridge.
