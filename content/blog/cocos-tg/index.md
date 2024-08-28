@@ -144,7 +144,7 @@ Through these steps, you can successfully start and publish a Cocos Creator proj
 4.1. Create a new scene, create a node in the scene, and attach the script GameLanch.ts.
 (I also placed the background image for the main interface here for preloading, but it can be omitted.)
 
-![P1](https://docs.zypher.network/static/blog/cocos-tg/P1.jpg)
+![P1](P1.png)
 
 4.2. GameLanch.ts.
 ```javascript
@@ -242,7 +242,8 @@ async initTelegram() {
 
 ```
 Send the retrieved window[‘Telegram’]?.WebApp?.initData to the server for verification.
-![P2](https://docs.zypher.network/static/blog/cocos-tg/P2.jpg)
+
+![P2](P2.png)
 
 4.4. Add the UIRank.ts script to the rank page. After UIRank inherits from the UIView class, it can be managed through the uiManager.
 ```javascript
@@ -253,9 +254,11 @@ this.list.refreshData(ranks); // Display in component
 ```
 
 4.5. Briefly discuss the reward.
-![P3](https://docs.zypher.network/static/blog/cocos-tg/P3.jpg)
-![P4](https://docs.zypher.network/static/blog/cocos-tg/P4.jpg)
-![P5](https://docs.zypher.network/static/blog/cocos-tg/P5.jpg)
+
+![P3](P3.png)
+![P4](P4.png)
+![P5](P5.png)
+
 The interface mainly has three scripts attached for rewards.
 
 ```
