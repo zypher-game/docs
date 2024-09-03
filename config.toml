@@ -1,6 +1,6 @@
 # The URL the site will be built for
 base_url = "https://docs.zypher.network"
-title = "Zypher Network"
+title = "Zypher"
 description = "Zypher Game Framework Documentation | Zypher Network Docs"
 
 # The site theme to use.
