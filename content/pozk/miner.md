@@ -25,68 +25,84 @@ Let's running a miner program in your devices.
 
 ## Setup
 1. Install latest [docker](https://www.docker.com)
-2. Download or copy [miner docker-compose template](https://github.com/zypher-game) - coming soon
+2. Download or copy [miner docker-compose template](https://github.com/zypher-game)
 ```
 version: '3'
 
 services:
   pozk-miner:
-    image: docker.registry.cyou/zyphernetwork/pozk-miner:0.0.11
+    image: zyphernetwork/pozk-miner:0.0.14
     container_name: pozk-miner
     ports:
       - "9098:9098"
     volumes:
-      - /home/cloud/tmp/pozk2:/home/ubuntu/pozk
+      - ./:/usr/pozk
       - /var/run/docker.sock:/var/run/docker.sock
-    command: /home/ubuntu/pozk/config.toml
+    command:
+      - --miner=0x0000000000000000000000000000000000000000
+      - --endpoint=https://opbnb-testnet-rpc.bnbchain.org
+      - --network=testnet
 
   pozk-frontend:
-    image: docker.registry.cyou/zyphernetwork/pozk-frontend:0.0.5
+    image: zyphernetwork/pozk-frontend:0.0.5
     container_name: pozk-frontend
     ports:
       - "4000:4000"
     environment:
       - API_BASE_URL=http://localhost:9098/api
-```
-3. Edit the docker-compose.yml and config.toml
-
-```
-# host path, same as base_path if not use docker
-prover_host_path = "/home/cloud/tmp/pozk2"
-
-# use docker
-base_path = "/home/ubuntu/pozk"
-
-# not docker
-# base_path = "/home/cloud/tmp/pozk2"
-
-db_remove = false
-endpoint = "https://opbnb-testnet-rpc.bnbchain.org"
-open_monitor = true
-
-[monitor_config]
-task_market_address = "0x27DE7777C1c643B7F3151F7e4Bd3ba5dacc62793"
-prover_market_address = "0x1c23e9F06b10f491e86b506c025080C96513C9f5"
-stake_address = "0x003C1F8F552EE2463e517FDD464B929F8C0bFF06"
-from = 0
-delay_sec = 0
-step = 10
-wait_time = 10
-block_number_type = "latest"
-miner = "0x28B9FEAE1f3d76565AAdec86E7401E815377D9Cc"
-docker_proxy_prefix = "docker.registry.cyou"
-
-[api_config]
-host = "0.0.0.0"
-port = 9098
-login_domain = "localhost:4000"
+      - NETWORK=testnet
 ```
 
-4. Run `docker compose up -d`
+3. Run `docker compose up -d`
+
+TIPS: if you use nginx, you can use the config to proxy:
+```
+server {
+    listen 80;
+    server_name xxx.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:4000;
+    }
+
+    location /api {
+        proxy_pass http://127.0.0.1:9098;
+    }
+}
+```
 
 ## Stake a prover (game)
 Open browser, and visit: `https://localhost:4000`
 
+1. Connect wallet use your miner account
+<img src="../miner-0.png" alt="Miner 0" width="100%"/>
+
+2. You need to setup a local controller for mining
+<img src="../miner-1.png" alt="Miner 1" width="100%"/>
+
+3. You can choose generate new or import one
+<img src="../miner-2.png" alt="Miner 2" width="100%"/>
+
+4. You need enable the controller and submit it to the chain
+<img src="../miner-3.png" alt="Miner 3" width="100%"/>
+
+5. Now, you can view the dashboard
+<img src="../miner-4.png" alt="Miner 4" width="100%"/>
+
 ## Install the prover
+1. You will see the provers list in the dashboard, and your staking status.
+<img src="../miner-5.png" alt="Miner 5" width="100%"/>
+
+2. You can stake the prover and download in local device.
+
+3. It will automatically start accepting orders for mining after you download the prover.
 
 ## Collect rewards
+
+1. You can see all rewards which can collect by epoch.
+<img src="../miner-6.png" alt="Miner 6" width="100%"/>
+
+2. After you collected the rewards, it will in `collected rewards`, and after an epoch, you can make a claim.
+<img src="../miner-7.png" alt="Miner 7" width="100%"/>
+
+3. After claim, it will send to you wallet directly.
