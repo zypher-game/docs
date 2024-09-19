@@ -23,18 +23,18 @@ If you don't know much about CocosCreator and Telegram, you can read [previous b
 
 ## Integrate TON Connect into your game
 ### 1. Add `tonconnect-ui.min.js` to the index.html
-```
+```html
 <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 ```
 
 ### 2. Add a div to use the wallet
-```
+```html
 <!-- Add this div into HTML -->
 <div id="ton-connect"></div>
 ```
 
 ### 3. Initialize TonconnectUI
-```
+```javascript
 // TonConnectUI
 // @ts-ignore
 this.tonConnectUI = new window.TON_CONNECT_UI.TonConnectUI(
@@ -54,7 +54,7 @@ this.tonConnectUI.uiOptions = {
 ![P1](P1.jpg)
 
 ### 4. Connect to wallet
-```
+```javascript
 const connectedWallet = await this.tonConnectUI.connectWallet().catch(error => {
   console.error('Error connecting to wallet:', error);
 });
@@ -68,7 +68,7 @@ await tonConnectUI.disconnect();
 ![P3](P3.jpg)
 
 ### 5. Pay
-```
+```javascript
 const time = Math.floor(Date.now() / 1000) + 600;
 const str = `${PlayerModel.inst.tg_userInfo.id}||${time}`;
 const body = beginCell()
@@ -92,7 +92,7 @@ const response = await this.tonConnectUI.sendTransaction({
 
 ### 6. Verify
 After the payment is completed, you will get the `boc`, and take the boc to the backend for verification to obtain the in-game items.
-```
+```javascript
 {
   boc: "te6cckEBAwEA4QAC44gBZUPZ6qi8Dtmm1cot1P175lXUARlUVwlfMM19lkERK1oCUB3RqDxAFnPpeo191X/jiimn9Bwnq3zwcU/MMjHRNN5sC5tyymBV3SJ1rjyyscAjrDDFAIV/iE+WBySEPP9wCU1NGLsfcvVgAAACSAAYHAECAGhCAFlQ9nqqLwO2abVyi3U/XvmVdQBGVRXCV8wzX2WQRErWoAmJaAAAAAAAAAAAAAAAAAAAAGZCAFlQ9nqqLwO2abVyi3U/XvmVdQBGVRXCV8wzX2WQRErWnMS0AAAAAAAAAAAAAAAAAAADkk4U"
 }
