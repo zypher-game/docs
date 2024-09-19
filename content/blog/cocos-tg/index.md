@@ -1,5 +1,5 @@
 +++
-title = "CocosCreator Development Telegram Game"
+title = "CocosCreator with Telegram Game"
 description = "Learning how to use CocosCreator to develop Telegram game"
 date = 2024-08-28T18:50:42+00:00
 updated = 2024-08-28T18:50:42+00:00
@@ -141,12 +141,14 @@ Through these steps, you can successfully start and publish a Cocos Creator proj
 
 
 ## 4. Protect Trump Cocos Code Explanation
-4.1. Create a new scene, create a node in the scene, and attach the script GameLanch.ts.
+### 4.1 New project
+Create a new scene, create a node in the scene, and attach the script GameLanch.ts.
 (I also placed the background image for the main interface here for preloading, but it can be omitted.)
 
 ![P1](P1.png)
 
-4.2. GameLanch.ts.
+### 4.2 Game Lanch
+GameLanch.ts.
 ```javascript
 // Manage global data
 PlayerModel.inst.init();
@@ -165,7 +167,7 @@ Use the uiManager interface to control the UI
 uiManager.open(UIID.UILoading);
 ```
 
-4.3. Telegram Data Retrieval
+### 4.3 Telegram Data Retrieval
 Add the following script reference in the template folder build-teleplates/web-mobile/index.html
 ```html
 <script async src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -245,7 +247,8 @@ Send the retrieved window[‘Telegram’]?.WebApp?.initData to the server for ve
 
 ![P2](P2.png)
 
-4.4. Add the UIRank.ts script to the rank page. After UIRank inherits from the UIView class, it can be managed through the uiManager.
+### 4.4 Rank page
+Add the UIRank.ts script to the rank page. After UIRank inherits from the UIView class, it can be managed through the uiManager.
 ```javascript
 Export default class UIRank extends UIView
 // Get leaderboard data
@@ -253,7 +256,7 @@ let ranksRes = await Http.getAllCoinsRank(PlayerModel.inst.tgInitData);
 this.list.refreshData(ranks); // Display in component
 ```
 
-4.5. Briefly discuss the reward.
+### 4.5 Briefly discuss the reward
 
 ![P3](P3.png)
 ![P4](P4.png)
@@ -292,10 +295,11 @@ onCopy() {
    }
 ```
 
-4.6. Modify the startup page by changing the startup page in the template. Mainly modify index.html and application.js.
+### 4.6 Startup page
+Modify the startup page by changing the startup page in the template. Mainly modify index.html and application.js.
 Added a background image and a progress bar.
 
-4.7. Publish the game
+### 4.7 Publish the game
 - [https://docs.cocos.com/creator/3.8/manual/zh/editor/publish/publish-web.html](https://docs.cocos.com/creator/3.8/manual/zh/editor/publish/publish-web.html)
 - [https://docs.cocos.com/creator/3.8/manual/zh/editor/publish/custom-project-build-template.html](https://docs.cocos.com/creator/3.8/manual/zh/editor/publish/custom-project-build-template.html)
 Refer to these two documents. Currently, it is published manually, but in the future, it can be published via command line. Don’t forget the MD5 when officially launching.
