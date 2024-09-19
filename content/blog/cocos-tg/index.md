@@ -2,7 +2,7 @@
 title = "CocosCreator with Telegram Game"
 description = "Learning how to use CocosCreator to develop Telegram game"
 date = 2024-08-28T18:50:42+00:00
-updated = 2024-08-28T18:50:42+00:00
+updated = 2024-09-18T18:50:42+00:00
 draft = false
 template = "blog/page.html"
 

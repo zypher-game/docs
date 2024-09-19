@@ -2,7 +2,7 @@
 title = "CocosCreator with Telegram Game (Part 2) - TON Payment"
 description = "Learning how to use CocosCreator to develop Telegram game and use the TON payment"
 date = 2024-09-19T18:50:42+00:00
-updated = 2024-9-19T18:50:42+00:00
+updated = 2024-09-19T18:50:42+00:00
 draft = false
 template = "blog/page.html"
 
