@@ -29,9 +29,13 @@ Let's running a miner program in your devices.
 ```
 version: '3'
 
+networks:
+  default:
+    name: pozk
+
 services:
   pozk-miner:
-    image: zyphernetwork/pozk-miner:0.0.14
+    image: zyphernetwork/pozk-miner:0.0.17
     container_name: pozk-miner
     ports:
       - "9098:9098"
@@ -40,16 +44,21 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     command:
       - --miner=0x0000000000000000000000000000000000000000
-      - --endpoint=https://opbnb-testnet-rpc.bnbchain.org
+      - --endpoints=https://linea-mainnet-zytron.zypher.game
       - --network=testnet
+      # - --config=/usr/pozk/config.toml # advance configure, default is none
+      # - --base-path=/usr/pozk # change host base path for docker use, default is /usr/pozk
+      # - --server=http://pozk-miner:9098 # the pozk-miner server with default networks: pozk
+      # - --docker-proxy=xxx # if need use docker proxy server
+      # - --zero-gas=xxx # if need other zero gas server uri, default is zytron 0 gas service
 
   pozk-frontend:
-    image: zyphernetwork/pozk-frontend:0.0.5
+    image: zyphernetwork/pozk-frontend:0.0.10
     container_name: pozk-frontend
     ports:
       - "4000:4000"
     environment:
-      - API_BASE_URL=http://localhost:9098/api
+      - API_BASE_URL=http://localhost:9098
       - NETWORK=testnet
 ```
 
@@ -61,12 +70,12 @@ server {
     listen 80;
     server_name xxx.com;
 
-    location / {
-        proxy_pass http://127.0.0.1:4000;
+    location ~ ^/(api|login|tasks) {
+        proxy_pass http://127.0.0.1:9098;
     }
 
-    location /api {
-        proxy_pass http://127.0.0.1:9098;
+    location / {
+        proxy_pass http://127.0.0.1:4000;
     }
 }
 ```
