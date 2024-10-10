@@ -30,6 +30,12 @@ section = "zytron"
 url = "/zytron/chain/overview/"
 weight = 30
 
+[[extra.menu.main]]
+name = "PoZK"
+section = "pozk"
+url = "/pozk/overview/"
+weight = 40
+
 [[extra.list]]
 title = "Secret Engine"
 content = 'A suite of SDKs to enable secure execution of verifiable encrypted computations, ensuring strategic elements remain sealed on-chain'
