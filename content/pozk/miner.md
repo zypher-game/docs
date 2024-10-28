@@ -102,7 +102,7 @@ Open browser, and visit: `https://localhost:4000`
 1. You will see the provers list in the dashboard, and your staking status.
 <img src="../miner-5.png" alt="Miner 5" width="100%"/>
 
-2. You can stake the prover and download in local device.
+2. You can download the prover in local device and then stake the prover.
 
 3. It will automatically start accepting orders for mining after you download the prover.
 
