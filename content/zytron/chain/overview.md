@@ -22,11 +22,11 @@ Zytron have mainnet on linea now!
 |  Field   | Value  |
 |  ----  | ----  |
 | Network Name  | Zytron Linea |
-| RPC | https://linea-mainnet-zytron.zypher.game/ |
+| RPC | https://rpc.zypher.network |
 | ChainId | 9901 |
-| Explorer | https://linea-mainnet-zytron-blockscout.zypher.game/ |
+| Explorer | https://explorer.zypher.network/ |
 | Currency | ETH |
-| Bridge | https://zytron-mainnet-bridge.zypher.game |
+| Bridge | https://bridge.zypher.network/ |
 | Safe Wallet | https://multisig.zytron.io/ |
 
 ## Zytron Testnet
