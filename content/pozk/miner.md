@@ -35,32 +35,24 @@ networks:
 
 services:
   pozk-miner:
-    image: zyphernetwork/pozk-miner:0.0.17
+    image: zyphernetwork/pozk-miner:v0.1.3
     container_name: pozk-miner
     ports:
-      - "9098:9098"
+      - 9098:9098 # HTTP
+      - 7364:7364 # P2P
+      - 7364:7364/udp
+
     volumes:
       - ./:/usr/pozk
       - /var/run/docker.sock:/var/run/docker.sock
     command:
-      - --miner=0x0000000000000000000000000000000000000000
-      - --endpoints=https://linea-mainnet-zytron.zypher.game
       - --network=testnet
-      # - --config=/usr/pozk/config.toml # advance configure, default is none
-      # - --base-path=/usr/pozk # change host base path for docker use, default is /usr/pozk
-      # - --server=http://pozk-miner:9098 # the pozk-miner server with default networks: pozk
-      # - --docker-proxy=xxx # if need use docker proxy server
-      # - --zero-gas=xxx # if need other zero gas server uri, default is zytron 0 gas service
-
-  pozk-frontend:
-    image: zyphernetwork/pozk-frontend:0.0.10
-    container_name: pozk-frontend
-    ports:
-      - "4000:4000"
-    environment:
-      - API_BASE_URL=http://localhost:9098
-      - NETWORK=testnet
+      - --miner=0x0000000000000000000000000000000000000000 # set your miner address here
+      - --url=https://example.com # set the public domain for this miner, you will receive more tasks
 ```
+
+[IMPORTANT] change the miner account, and if you set the domain for this miner, you will receive tasks from proxy-service,
+and support multiple zk tasks (e.g. Z4).
 
 3. Run `docker compose up -d`
 
@@ -70,12 +62,12 @@ server {
     listen 80;
     server_name xxx.com;
 
-    location ~ ^/(api|login|tasks) {
+    location / {
         proxy_pass http://127.0.0.1:9098;
     }
 
-    location / {
-        proxy_pass http://127.0.0.1:4000;
+    location /inner/ {
+        return 400;
     }
 }
 ```
@@ -102,7 +94,7 @@ Open browser, and visit: `https://localhost:4000`
 1. You will see the provers list in the dashboard, and your staking status.
 <img src="../miner-5.png" alt="Miner 5" width="100%"/>
 
-2. You can download the prover in local device and then stake the prover.
+2. You must download the prover in local device, AND THEN you can stake the prover.
 
 3. It will automatically start accepting orders for mining after you download the prover.
 
