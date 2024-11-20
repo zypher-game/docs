@@ -17,31 +17,27 @@ top = false
 
 ## Zytron Mainnet
 
-Zytron have mainnet on linea now!
+Zytron have mainnet on Linea now!
 
-|  Field   | Value  |
-|  ----  | ----  |
-| Network Name  | Zytron Linea |
-| RPC | https://rpc.zypher.network |
-| ChainId | 9901 |
-| Explorer | https://explorer.zypher.network/ |
-| Currency | ETH |
-| Bridge | https://bridge.zypher.network/ |
-| Safe Wallet | https://multisig.zytron.io/ |
+| Field        | Value                           |
+|--------------|---------------------------------|
+| Network Name | Zytron Mainnet                  |
+| RPC          | https://rpc.zypher.network      |
+| ChainId      | 9901                            |
+| Explorer     | https://explorer.zypher.network |
+| Currency     | ETH                             |
+| Bridge       | https://bridge.zypher.network   |
+| Safe Wallet  | https://multisig.zytron.io/     |
 
 ## Zytron Testnet
 
-Zytron has two test networks. You can choose to use it according to your needs.
+Zytron testnet based on Linea-Sepolia network.
 
-### Zytron on Linea
-
-|  Field   | Value  |
-|  ----  | ----  |
-| Network Name  | Zytron Linea(Sepolia) Testnet |
-| RPC | https://linea-testnet-zytron.zypher.game/ |
-| ChainId | 50098 |
-| Explorer | https://linea-testnet-zytron-blockscout.zypher.game/ |
-| Currency | ETH |
-| Bridge | https://zytron-testnet-bridge.zypher.game/ |
-
-
+| Field        | Value                                   |
+|--------------|-----------------------------------------|
+| Network Name | Zytron Testnet                          |
+| RPC          | https://rpc-testnet.zypher.network      |
+| ChainId      | 50098                                   |
+| Explorer     | https://explorer-testnet.zypher.network |
+| Currency     | ETH                                     |
+| Bridge       | https://bridge-testnet.zypher.network   |
