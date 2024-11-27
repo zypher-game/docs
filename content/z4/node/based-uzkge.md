@@ -1,15 +1,15 @@
 +++
 title = "Customized Node"
 description = "A customized zk & room for game."
-date = 2021-05-01T08:00:00+00:00
-updated = 2021-05-01T08:00:00+00:00
+date = 2024-05-01T08:00:00+00:00
+updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 5001
+weight = 2101
 sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-section = "zk"
+section = "z4"
 lead = 'A customized zk & room for game'
 toc = true
 top = false

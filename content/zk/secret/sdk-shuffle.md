@@ -4,7 +4,7 @@ description = "Hide card information and ensure card security."
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 2100
+weight = 1104
 sort_by = "weight"
 template = "docs/page.html"
 

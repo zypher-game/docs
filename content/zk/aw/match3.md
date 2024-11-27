@@ -4,7 +4,7 @@ description = "Match 3 circuit SDK."
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 3002
+weight = 1203
 sort_by = "weight"
 template = "docs/page.html"
 

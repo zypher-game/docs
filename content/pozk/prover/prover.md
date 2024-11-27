@@ -1,17 +1,16 @@
 +++
-title = "Build a prover (Game)"
-description = "How to build a prover for game and use PoZK network."
+title = "Build a ZK game"
+description = "How to build a ZK prover for game and use PoZK network."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
-weight = 5001
+weight = 3101
 sort_by = "weight"
-section = "pozk"
 template = "docs/page.html"
 
 [extra]
 section = "pozk"
-lead = 'How to build a prover for game and use PoZK network.'
+lead = 'How to build a ZK prover for game and use PoZK network.'
 toc = true
 top = false
 +++

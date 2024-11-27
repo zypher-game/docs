@@ -4,7 +4,7 @@ description = "Zytron chain is 0 gas"
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 4001
+weight = 4003
 sort_by = "weight"
 template = "docs/page.html"
 
@@ -86,7 +86,7 @@ POST /wallet
 
 Request:
 
-```jsonc
+```json
 {
     // The address of who can operate this wallet
     "controller": "string",
@@ -103,7 +103,7 @@ Request:
 
 Response:
 
-```jsonc
+```json
 {
   "data": "string",
   "msg": "string",
@@ -118,7 +118,7 @@ POST /functioncall
 
 Request
 
-```jsonc
+```json
 {
     // Address of wallet
     "wallet": "string",
@@ -141,7 +141,7 @@ Request
 
 Response:
 
-```jsonc
+```json
 {
   "data": "string",
   "msg": "string",
@@ -158,7 +158,7 @@ POST /functioncall_list
 
 Request:
 
-```jsonc
+```json
 {
   "list": [
     {
@@ -177,7 +177,7 @@ Request:
 
 Response:
 
-```jsonc
+```json
 {
   "data": "string",
   "msg": "string",
@@ -194,7 +194,7 @@ POST /set_controller
 
 Request:
 
-```jsonc
+```json
 {
   "wallet": "string",
   "controller": "string",
@@ -208,7 +208,7 @@ Request:
 
 Response:
 
-```jsonc
+```json
 {
   "data": "string",
   "msg": "string",

@@ -1,8 +1,8 @@
 +++
-title = "Zytron Chain"
-description = "A L3 game chain"
+title = "Prover"
+description = "How to build a prover"
 template = "docs/section.html"
 sort_by = "weight"
-weight = 4001
+weight = 3100
 draft = false
 +++

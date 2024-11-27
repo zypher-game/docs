@@ -4,7 +4,7 @@ description = "2048 circuit SDK."
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = false
-weight = 3001
+weight = 1202
 sort_by = "weight"
 template = "docs/page.html"
 

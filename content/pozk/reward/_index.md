@@ -1,8 +1,8 @@
 +++
-title = "Zytron Chain"
-description = "A L3 game chain"
+title = "Reward"
+description = "How to collect rewards"
 template = "docs/section.html"
 sort_by = "weight"
-weight = 4001
+weight = 3400
 draft = false
 +++

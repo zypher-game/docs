@@ -4,7 +4,7 @@ description = "A highly customizable Layer 3 sovereign rollup stack"
 date = 2024-05-01T08:00:00+00:00
 updated = 2024-05-01T08:00:00+00:00
 draft = true
-weight = 4201
+weight = 4202
 sort_by = "weight"
 template = "docs/page.html"
 

@@ -16,45 +16,51 @@ repo_url = "https://github.com/zypher-game"
 name = "Blog"
 section = "blog"
 url = "/blog/"
-weight = 10
+weight = 1
 
 [[extra.menu.main]]
 name = "ZK"
 section = "zk"
 url = "/zk/guide/overview/"
-weight = 20
+weight = 10
 
 [[extra.menu.main]]
-name = "Zytron"
-section = "zytron"
-url = "/zytron/chain/overview/"
-weight = 30
+name = "Z4"
+section = "z4"
+url = "/z4/overview/"
+weight = 20
 
 [[extra.menu.main]]
 name = "PoZK"
 section = "pozk"
 url = "/pozk/overview/"
+weight = 30
+
+[[extra.menu.main]]
+name = "Zytron"
+section = "zytron"
+url = "/zytron/chain/overview/"
 weight = 40
 
 [[extra.list]]
-title = "Secret Engine"
-content = 'A suite of SDKs to enable secure execution of verifiable encrypted computations, ensuring strategic elements remain sealed on-chain'
-
-[[extra.list]]
-title = "AW SDK"
-content = 'A suite of zk-Legos-as-SDKs to enable games to hyper-scale vertically. Plug and play, easy and free customization'
+title = "ZK SDK"
+content = 'A suite of zk-Legos-as-SDKs. Plug and play, easy and free customization.'
 
 [[extra.list]]
 title = "Z4 Framework"
-content = 'A multiple online real-time game server framework. Low latency, high performance, ZK protection'
+content = 'A multiple online real-time game server framework. Low latency, high performance, ZK protection.'
+
+[[extra.list]]
+title = "PoZK"
+content = "The ZK & Z4 mining network. Turning RUNTIME into decentralization."
+
+[[extra.list]]
+title = "zkVM"
+content = 'Integrate multiple zkVMs, make game development simple and efficient. Bring ZK into the game world.'
 
 [[extra.list]]
 title = "Zytron"
-content = "A Highly customizable Layer 3 sovereign roll up stack. The most viable infrastructure for production-level MMOs"
-
-[[extra.list]]
-title = "Generative AI"
-content = "The blessing of AI for games allows all gamer to enjoy the fun of freely customizing games"
+content = "A Highly customizable Layer 3 sovereign roll up stack. Gasless and high speed."
 
 [[extra.list]]
 title = "Games DAO"
