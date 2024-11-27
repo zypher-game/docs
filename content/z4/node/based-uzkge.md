@@ -18,21 +18,36 @@ top = false
 ## Contents
 In z4 engine, developers only need to implement an interface and configure some startup parameters, and then will get a complete z4 game node.
 
-`z4 new my-game` will generate new Z4 game template.
+`z4 new --name my-game` will generate new Z4 game template.
 
 ### Handler
 
-`Handler` trait is the core interface. Developers can implement the game logic in it, and then they can directly use the z4 engine to run it. This interface including `accept` room events from the chain, `create` room events when the room is accepted by this node, and also supporting events when nodes go online and offline (connected and disconnected with websocket), and finally how to handle user request events in general.
+`Handler` trait is the core interface. Developers can implement the game logic in it, and then they can directly use the z4 engine to run it. This interface including `chain_accept` room events from the chain, `chain_create` room events when the room is accepted by this node, and also supporting events when nodes go online and offline (connected and disconnected with websocket), and finally how to handle user request events in general.
 
 ```rust
 pub trait Handler: Send + Sized + 'static {
     type Param: Param;
 
+    /// Viewable for game
+    /// If true, when send message to all will also send to viewers
+    /// If set false, no viwers
+    fn viewable() -> bool;
+
     /// accept params when submit to chain
-    async fn accept(peers: &[(Address, PeerId, [u8; 32])]) -> Vec<u8>;
+    async fn chain_accept(peers: &[Player]) -> Vec<u8>;
 
     /// create new room scan from chain
-    async fn create(peers: &[(Address, PeerId, [u8; 32])], params: Vec<u8>, rid: RoomId) -> (Self, Tasks<Self>);
+    async fn chain_create(peers: &[Player], params: Vec<u8>, rid: RoomId, seed: [u8; 32]) -> Option<(Self, Tasks<Self>)>;
+
+    /// New Viewer online if viewable is true
+    async fn viewer_online(&mut self, _peer: PeerId) -> Result<HandleResult<Self::Param>> {
+        Ok(HandleResult::default())
+    }
+
+    /// New Viewer offline if viewable is true
+    async fn viewer_offline(&mut self, _peer: PeerId) -> Result<HandleResult<Self::Param>> {
+        Ok(HandleResult::default())
+    }
 
     /// when player online
     async fn online(&mut self, _player: PeerId) -> Result<HandleResult<Self::Param>> {
@@ -45,7 +60,10 @@ pub trait Handler: Send + Sized + 'static {
     }
 
     /// handle message in a room
-    async fn handle(&mut self, player: PeerId, method: &str, param: Self::Param) -> Result<HandleResult<Self::Param>>;
+    async fn handle(&mut self, player: PeerId, param: Self::Param) -> Result<HandleResult<Self::Param>>;
+
+    /// Generate proof for this game result, when find game is over
+    async fn prove(&mut self) -> Result<(Vec<u8>, Vec<u8>)>;
 }
 ```
 
@@ -57,30 +75,46 @@ Firstly, `type Param: Param`, this method defines the type which the data in the
 ```rust
 /// serialize & deserialize for params
 pub trait Param: Sized + Send + Default {
-    fn to_value(self) -> Value;
+    /// To json value
+    fn to_string(&self) -> String;
 
-    fn from_value(value: Value) -> Result<Self>;
+    /// From json value
+    fn from_string(s: String) -> Result<Self>;
 
+    /// To bytes
     fn to_bytes(&self) -> Vec<u8>;
 
-    fn from_bytes(bytes: &[u8]) -> Result<Self>;
+    /// From bytes
+    fn from_bytes(bytes: Vec<u8>) -> Result<Self>;
+
+    /// To json value
+    fn to_value(&self) -> Value;
+
+    /// From json value
+    fn from_value(v: Value) -> Result<Self>;
 }
 ```
 
-It defines how to convert to and from `serde_json::Value`, and also how to convert to and from `Vec<u8>`. We provide a default params, as follows:
+It defines how to convert to and from `serde_json::Value`, and also how to convert to and from `Vec<u8>` and `String`. We provide some default params, as follows:
 
 ```rust
-pub struct DefaultParams(pub Vec<Value>);
+pub struct MethodValues { method: String, params: Vec<Value> };
+
+impl Param for Vec<u8>;
+
+impl Param for String;
+
+impl Param for Value;
 ```
 
-If developers don't want to define it specially, can directly use the `DefaultParams` structure.
+If developers don't want to define it specially, can directly use the `MethodValues` structure.
 
-#### accept
+#### chain_accept
 When z4 node finds that a room on the chain is in an acceptable state, it will actively call the accept method and pass in the players information as a parameter. The return value is what is carried when the accept transaction is submitted to the chain. The content of this information is completely defined by the developer based on game logic, and can also be empty.
 
 The player's information includes: the player's eth address, the player's locally generated temporary account address and the public key of the temporary account.
 
-#### create
+#### chain_create
 When the z4 node finds that it has successfully accepted a room on the chain, it will call the create method to create the room. Parameters include: room players information, data submitted when accepting, room id, and the return value is the room structure and the scheduled task for the room. Regarding the room definition tasks, the following will explain in detail how to define scheduled tasks.
 
 #### online and offline
@@ -124,11 +158,13 @@ This is a common return value of z4 engine. Z4 will perform different network tr
 ```rust
 pub struct HandleResult<P: Param> {
     /// need broadcast the msg in the room
-    all: Vec<(String, P)>,
+    all: Vec<P>,
     /// need send to someone msg
-    one: Vec<(PeerId, String, P)>,
-    /// when game over, need prove the operations & states
-    over: Option<(Vec<u8>, Vec<u8>)>,
+    one: Vec<(PeerId, P)>,
+    /// when game over, and then engine will call prove method
+    over: bool,
+    /// when game started, in the custom mode, it always true after chain_create
+    started: bool,
 }
 ```
 

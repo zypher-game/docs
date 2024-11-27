@@ -25,8 +25,5 @@ Detailed introduction to zero-knowledge proofs and secret engine. [Quick Start �
 ## Aggregate World Engine
 Detailed introduction to aggregate world engine and zk-game SDKs. [Quick Start →](../../aw/overview)
 
-## Z4 Framework
-Detailed introduction to multiple online real-time game framework. [Quick Start →](../../z4/overview)
-
 ## Contributing
 Find out how to contribute to Doks. [Contributing →](../../contributing/how-to-contribute)
