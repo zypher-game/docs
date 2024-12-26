@@ -16,7 +16,11 @@ top = false
 +++
 
 ## Introduction
-TODO
+More play, more staking, more rewards.
+
+In the PoZK mining network, players can get rewards.
+First, the players needs to stake,
+then the players start the game (create zk tasks).
 
 ## Stake for earn
 
