@@ -72,7 +72,7 @@ server {
 ```
 
 ## Stake a prover (game)
-Open browser, and visit: `https://localhost:9098`
+Open browser, and visit: `http://localhost:9098`
 
 1. Connect wallet use your miner account
 <img src="../miner-0.png" alt="Miner 0" width="100%"/>
