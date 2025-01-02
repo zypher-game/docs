@@ -50,8 +50,26 @@ services:
       # - --url=https://example.com # set the public domain for this miner, you will receive more tasks
 ```
 
-[IMPORTANT] change the miner account, and if you set the domain for this miner, you will receive tasks from proxy-service,
-and support multiple zk tasks (e.g. Z4).
+> **IMPORTANT** change the miner account, and if you set the domain for this miner, you will receive tasks from proxy-service,
+> and support multiple zk tasks (e.g. Z4).
+
+Others `command` parameters list here, maybe you need:
+```
+# if you want to use a proxy to speed up docker download
+- --docker-proxy=docker.unsee.tech
+
+# if you want to change the data storage directory
+- --base-path=/usr/pozk
+
+# if you want to change the RPC endpoints
+- --endpoints=https://rpc.zypher.network
+
+# if you want to use another 0 gas server to pay gas
+- --zero-gas=https://gas.zypher.network
+
+# if you want to use more advanced configuration
+- --config=/usr/pozk/config.toml
+```
 
 3. Run `docker compose up -d`
 
@@ -83,7 +101,7 @@ Open browser, and visit: `http://localhost:9098`
 3. You can choose generate new or import one
 <img src="../miner-2.png" alt="Miner 2" width="100%"/>
 
-4. You need enable the controller and submit it to the chain
+4. You need enable the controller and submit it to the chain, make sure there is enough balance in this account if this account does not has [0 gas SBT](https://zytron.zypher.network/layer3).
 <img src="../miner-3.png" alt="Miner 3" width="100%"/>
 
 5. Now, you can view the dashboard
