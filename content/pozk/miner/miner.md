@@ -34,7 +34,7 @@ networks:
 
 services:
   pozk-miner:
-    image: zyphernetwork/pozk-miner:v0.1.3
+    image: zyphernetwork/pozk-miner:v0.1.11
     container_name: pozk-miner
     ports:
       - 9098:9098 # HTTP
@@ -47,7 +47,7 @@ services:
     command:
       - --network=testnet
       - --miner=0x0000000000000000000000000000000000000000 # set your miner address here
-      - --url=https://example.com # set the public domain for this miner, you will receive more tasks
+      # - --url=https://example.com # set the public domain for this miner, you will receive more tasks
 ```
 
 [IMPORTANT] change the miner account, and if you set the domain for this miner, you will receive tasks from proxy-service,
@@ -72,7 +72,7 @@ server {
 ```
 
 ## Stake a prover (game)
-Open browser, and visit: `https://localhost:4000`
+Open browser, and visit: `https://localhost:9098`
 
 1. Connect wallet use your miner account
 <img src="../miner-0.png" alt="Miner 0" width="100%"/>
