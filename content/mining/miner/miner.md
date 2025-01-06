@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-section = "pozk"
+section = "mining"
 lead = 'How to become a miner and earn rewards.'
 toc = true
 top = false
@@ -26,8 +26,6 @@ Let's running a miner program in your devices.
 1. Install latest [docker](https://www.docker.com)
 2. Download or copy [miner docker-compose template](https://github.com/zypher-game)
 ```
-version: '3'
-
 networks:
   default:
     name: pozk

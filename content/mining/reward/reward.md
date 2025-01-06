@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-section = "pozk"
+section = "mining"
 lead = 'Reward and punishment mechanism.'
 toc = true
 top = false
@@ -17,7 +17,7 @@ math = true
 +++
 
 ## Reward
-In the pozk mining network, a fixed amount of mining rewards will be released in each epoch, and both miners and players will receive rewards, so how are these rewards distributed?
+In the mining network, a fixed amount of mining rewards will be released in each epoch, and both miners and players will receive rewards, so how are these rewards distributed?
 
 First, because there are different games (zk provers) in the network, each prover requires different computing power and running time, so we need to make a fair distribution of the provers.
 Here, the parameters include the prover's work and the staking amount. So there are two attributes of labor and assets, we adopted [Cobb–Douglas production function](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function) when allocating the two attributes fairly.

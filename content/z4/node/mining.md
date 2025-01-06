@@ -1,6 +1,6 @@
 +++
-title = "Based on PoZK"
-description = "A customized zk game running on PoZK"
+title = "Based on Mining Network"
+description = "A customized zk game running on Mining Network"
 date = 2024-11-26T08:00:00+00:00
 updated = 2024-11-26T08:00:00+00:00
 draft = false
@@ -10,15 +10,15 @@ template = "docs/page.html"
 
 [extra]
 section = "z4"
-lead = 'A customized zk game running on PoZK'
+lead = 'A customized zk game running on Mining Network'
 toc = true
 top = false
 +++
 
 ## Introduction
-Whether it is based on PoZK engine or custom engine, you can reuse the code of `Handler`. You only need to specify the engine type to be used when starting.
+Whether it is based on mining PoZK engine or custom engine, you can reuse the code of `Handler`. You only need to specify the engine type to be used when starting.
 
-Once you have written a program based on PoZK, the next step is [How to register it in the PoZK network](/pozk/prover/z4/).
+Once you have written a program based on mining netweork, the next step is [How to register it in the mining network](/mining/prover/z4/).
 
 ## Trait for PoZK
 In the previous docs, you have been learned the `Handler` trait, here we will show you another two method for PoZK. That is `pozk_create` & `pozk_join`.
@@ -84,4 +84,4 @@ async fn main() {
 }
 ```
 
-Next step is [How to register it in the PoZK network](/pozk/prover/z4/).
+Next step is [How to register it in the mining network](/mining/prover/z4/).

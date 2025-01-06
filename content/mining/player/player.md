@@ -9,7 +9,7 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-section = "pozk"
+section = "mining"
 lead = 'How to play games and earn rewards.'
 toc = true
 top = false
@@ -18,7 +18,7 @@ top = false
 ## Introduction
 More play, more staking, more rewards.
 
-In the PoZK mining network, players can get rewards.
+In the mining network, players can get rewards.
 First, the players needs to stake,
 then the players start the game (create zk tasks).
 

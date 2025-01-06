@@ -1,6 +1,6 @@
 +++
 title = "Build a ZK game"
-description = "How to build a ZK prover for game and use PoZK network."
+description = "How to build a ZK prover for game and use mining network."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -9,8 +9,8 @@ sort_by = "weight"
 template = "docs/page.html"
 
 [extra]
-section = "pozk"
-lead = 'How to build a ZK prover for game and use PoZK network.'
+section = "mining"
+lead = 'How to build a ZK prover for game and use mining network.'
 toc = true
 top = false
 +++
@@ -125,7 +125,7 @@ You can add more game logic to the contract.
 After the contract is completed, deploy the contract to the blockchain where the mining network is located, and then let's make a pull request to the official repository.
 
 ## 3. Register to prover market
-First, submit a register application in the PoZK network. Use this function.
+First, submit a register application in the mining network. Use this function.
 
 ```
 function register(
@@ -137,7 +137,7 @@ function register(
 );
 ```
 
-And then, open a PR to PoZK repository in GitHub (coming soon), and provide the open source address of prover and the dockerfile compiled into docker image.
+And then, open a PR to mining repository in GitHub (coming soon), and provide the open source address of prover and the dockerfile compiled into docker image.
 
 Example 2048 Dockerfile:
 ```
@@ -175,7 +175,7 @@ At this point, your game prover can be staked and minted by miners, and can be i
 
 ### 5.1 Create task on Task Market directly
 
-First of all, you need to understand this process: players create proof task to the `TaskMarket` contract in the PoZK network, all miners will listen to the contract, when a new task appears, miners will accept the task immediately, and execute the proof, after the proof is completed, miner will submit to TaskMarket contract.
+First of all, you need to understand this process: players create proof task to the `TaskMarket` contract in the mining network, all miners will listen to the contract, when a new task appears, miners will accept the task immediately, and execute the proof, after the proof is completed, miner will submit to TaskMarket contract.
 
 Therefore, you only need to follow the two points in the TaskMarket contract:
 1. How to create a task.

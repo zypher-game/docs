@@ -31,9 +31,9 @@ url = "/z4/overview/"
 weight = 20
 
 [[extra.menu.main]]
-name = "PoZK"
-section = "pozk"
-url = "/pozk/overview/"
+name = "Mining"
+section = "mining"
+url = "/mining/overview/"
 weight = 30
 
 [[extra.menu.main]]
@@ -51,7 +51,7 @@ title = "Z4 Framework"
 content = 'A multiple online real-time game server framework. Low latency, high performance, ZK protection.'
 
 [[extra.list]]
-title = "PoZK"
+title = "Mining Network"
 content = "The ZK & Z4 mining network. Turning RUNTIME into decentralization."
 
 [[extra.list]]

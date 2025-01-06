@@ -1,23 +1,22 @@
 +++
 title = "Overview"
-description = "Prover network for ZK games."
+description = "Mining network for ZK games."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
 weight = 3001
 sort_by = "weight"
-section = "pozk"
 template = "docs/page.html"
 
 [extra]
-section = "pozk"
-lead = 'Prover network for ZK games'
+section = "mining"
+lead = 'Mining network for ZK games'
 toc = true
 top = false
 +++
 
 ## Introduction
-PoZK is a prover network for ZK games.
+Zypher Mining Network is a prover network for ZK games.
 
 In order to allow players to play games smoothly on various terminal devices without being restricted by zk computing power, we launched the ZK prover network to solve the problem of players' computing power.
 
@@ -28,12 +27,12 @@ Here is the architecture diagram of the entire product, illustrating the relatio
 <img src="../arch.jpg" alt="Architecture" width="100%"/>
 
 
-Here is an explanation of the complete workflow, from players to miners in the PoZK network.
+Here is an explanation of the complete workflow, from players to miners in the Mining Network.
 
 <img src="../workflow.jpg" alt="Workflow" width="100%"/>
 
 ## Build a prover
-How to build a prover for game and use PoZK network. [More →](../prover)
+How to build a prover for game and use mining network. [More →](../prover)
 
 ## Become a miner
 How to become a miner and earn rewards. [More →](../miner)
