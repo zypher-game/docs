@@ -16,11 +16,11 @@ top = false
 +++
 
 ## Introduction
-Miners are responsible for generating all proofs in the network, so they need not only computing power support, but also stake guarantee. At the same time, miners will receive most of the rewards in the network.
+Within the network, miners are tasked with generating all proofs, necessitating both significant computational resources and a stake commitment as collateral. This crucial role is reflected in the reward structure, with miners receiving the largest share of network rewards.
 
-Because there are various prover programs in the network, different programs have different hardware requirements, so even laptops and mobile phones also have the opportunity to participate in mining and get rewards. Of course, high-computing power devices will complete more prover tasks and get more opportunities.
+The network's architecture accommodates a wide range of proving programs, each with its own hardware specifications. This design allows for broader participation, enabling even devices such as laptops and mobile phones to contribute to mining and receive corresponding rewards. However, devices with higher processing power will be capable of completing a greater number of proving tasks, resulting in increased reward opportunities.
 
-Let's running a miner program in your devices.
+Begin running a miner program on your device to participate.
 
 ## Setup
 1. Install latest [docker](https://www.docker.com)

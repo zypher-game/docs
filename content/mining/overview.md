@@ -16,13 +16,13 @@ top = false
 +++
 
 ## Introduction
-Zypher Mining Network is a prover network for ZK games.
+The Zypher Mining Network empowers ZK games by providing a dedicated proving infrastructure.
 
-In order to allow players to play games smoothly on various terminal devices without being restricted by zk computing power, we launched the ZK prover network to solve the problem of players' computing power.
+This network addresses the challenge of limited on-device processing power, enabling smooth gameplay across a wider range of devices. By offloading complex ZK computations, the network ensures an optimal gaming experience for all players.
 
-At the same time, computing power will be rewarded. Each proof represents the correctness of the result of a game. Each proof is meaningful, so each computing power will be rewarded. Not only miners will get computing power rewards, but players will also get game rewards. Promote more games to join and more players to experience decentralized games.
+Contributing to the network through proof generation is a rewarding endeavor. Each proof validates a game result, contributing to the integrity of the game and earning rewards for the prover. This dual reward system benefits both miners and players, fostering a thriving ecosystem of decentralized gaming.
 
-Here is the architecture diagram of the entire product, illustrating the relationship between the various components (roles)
+The following architecture diagram illustrates the relationships between the various components (roles) within the system.
 
 <img src="../arch.jpg" alt="Architecture" width="100%"/>
 

@@ -1,6 +1,6 @@
 +++
 title = "Reward and punishment"
-description = "Reward and punishment mechanism."
+description = "Reward Allocation Mechanism"
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -10,17 +10,23 @@ template = "docs/page.html"
 
 [extra]
 section = "mining"
-lead = 'Reward and punishment mechanism.'
+lead = 'Reward Allocation Mechanism'
 toc = true
 top = false
 math = true
 +++
 
 ## Reward
-In the mining network, a fixed amount of mining rewards will be released in each epoch, and both miners and players will receive rewards, so how are these rewards distributed?
+Reward Allocation Mechanism in the Zypher Mining Network
 
-First, because there are different games (zk provers) in the network, each prover requires different computing power and running time, so we need to make a fair distribution of the provers.
-Here, the parameters include the prover's work and the staking amount. So there are two attributes of labor and assets, we adopted [Cobb–Douglas production function](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function) when allocating the two attributes fairly.
+A fixed amount of mining rewards is released during each epoch in the Zypher Mining Network, distributed between miners and players. A key challenge is ensuring fair distribution among the diverse games (ZK provers) operating within the network, as each prover exhibits varying computational demands and execution times.
+
+To address this challenge, we consider two primary factors:
+
+- **Prover Workload**: This metric quantifies the computational effort required by a specific ZK prover, encompassing factors like processing time and resources consumed.
+- **Staked Amount**: This represents the amount of tokens staked by participants contributing to a specific prover, reflecting their commitment and investment.
+
+By drawing an analogy between prover workload and labor, and staked amount and capital, we employ the [Cobb-Douglas production function](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function) to achieve a balanced and equitable distribution of rewards. The Cobb-Douglas function, widely used in economics to model production output based on labor and capital inputs, allows us to proportionally allocate rewards based on both the prover's contribution (workload) and the stake backing it (capital). This approach ensures that both computational effort and financial commitment are appropriately recognized and rewarded.
 
 <p>
 \(W_g\) is the prover's proof of ZK work, \(W_t\) is all provers' work, \(S_g\) is the prover's staking amount, \(S_t\) is total provers' staking amount. \(a\) and \(b\) is cobb-douglas coefficients. \(n\) is epoch reward number.
@@ -56,10 +62,10 @@ $$
 In this way, we distribute all rewards fairly.
 
 ## Pubishment
-During the process of the network, because it is completely decentralized, some disputes may arise, such as a zk task not being completed on time, an abnormality in a zk service, etc.
-In these cases, for the fairness, we have added a punishment and supervision mechanism.
+As the network operates in a fully decentralized environment, the potential for disputes exists. These may include instances of delayed ZK task completion, ZK service abnormalities, or other operational issues.
+To maintain fairness and integrity, a robust dispute resolution system, incorporating both penalties and oversight, has been established.
 
-Both players and miners can submit applications to explain the problems of the other party. After the intervention and review by DAO, it will be processed.
+This system allows both players and miners to formally submit applications outlining the nature of the dispute. These applications are then subject to review and resolution by the DAO.
 
 ## Dispute
 For miners' mistakes, part of the staking amount will be slashed and rewarded to players.

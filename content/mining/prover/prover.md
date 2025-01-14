@@ -16,9 +16,9 @@ top = false
 +++
 
 ## Introduction
-Each prover represents a ZK prover program. A game may have one prover or multiple provers. Our network uses prover as the basic unit. Stake and reward are divided according to prover. Each prover has a different reward scale, based on the power of the prover itself, and also based on the usage of the prover.
+Within the network, each prover corresponds to a specific ZK proving program. A single game may employ one or more provers. The prover serves as the core unit for network operations, including staking and reward allocation. Each prover's reward scale is dynamically adjusted based on two key factors: its inherent processing capabilities and its actual usage within the network.
 
-We know that different zk schemes have different computing power requirements, and zkVMs are also significantly different from ordinary zk schemes. Therefore, for different zk provers, we have developed a set of measurement algorithms to balance the performance of different zk provers. The difference in computing power between algorithms.
+To address the diverse computational requirements of different ZK schemes—particularly the notable performance differences between zkVMs and conventional ZK schemes—we have implemented a suite of measurement algorithms. These algorithms ensure a balanced distribution of rewards, accounting for the variations in computational power required by different proving methods.
 
 | scheme      | coefficient | Game              | Circuit size / Cycle | Work      | Times (4core) | Times (96core) |
 |-------------|-------------|-------------------|----------------------|-----------|---------------|----------------|
@@ -32,7 +32,7 @@ We know that different zk schemes have different computing power requirements, a
 | zkEVM-RISC0 | 4           | Zemeroth          | 195919638            | 783678552 | 30h           | 4448s          |
 
 ## 1. Build a prover
-Now you need to build a command-line prover program.
+Now you need to build a command-style prover program.
 
 1. read input file from outside
 2. parses the witness or raw data in the file

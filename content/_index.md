@@ -25,38 +25,44 @@ url = "/zk/guide/overview/"
 weight = 10
 
 [[extra.menu.main]]
+name = "AI"
+section = "ai"
+url = "/ai/overview/"
+weight = 20
+
+[[extra.menu.main]]
 name = "Z4"
 section = "z4"
 url = "/z4/overview/"
-weight = 20
+weight = 30
 
 [[extra.menu.main]]
 name = "Mining"
 section = "mining"
 url = "/mining/overview/"
-weight = 30
+weight = 40
 
 [[extra.menu.main]]
 name = "Zytron"
 section = "zytron"
 url = "/zytron/chain/overview/"
-weight = 40
+weight = 50
 
 [[extra.list]]
 title = "ZK SDK"
 content = 'A suite of zk-Legos-as-SDKs. Plug and play, easy and free customization.'
 
 [[extra.list]]
-title = "Z4 Framework"
-content = 'A multiple online real-time game server framework. Low latency, high performance, ZK protection.'
+title = "AI"
+content = "zkPrompt empower AI-driven systems with transparency, integrity, and unparalleled privacy, redefining trust in digital ecosystems."
 
 [[extra.list]]
 title = "Mining Network"
 content = "The ZK & Z4 mining network. Turning RUNTIME into decentralization."
 
 [[extra.list]]
-title = "zkVM"
-content = 'Integrate multiple zkVMs, make game development simple and efficient. Bring ZK into the game world.'
+title = "Z4 Framework"
+content = 'A multiple online real-time game server framework. Low latency, high performance, ZK protection.'
 
 [[extra.list]]
 title = "Zytron"
