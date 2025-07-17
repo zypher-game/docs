@@ -44,6 +44,7 @@ include_content = true
 highlight_code = true
 
 [extra]
+announcement_html = '<div style="background: #fff4ce; border-left: 5px solid #ffa500; padding: 1em; margin-bottom: 1em;">📢 <strong>Our developer documentation has moved!</strong><br>Please visit <a href="https://wiki.zypher.network" target="_blank">wiki.zypher.network</a> for the latest updates and information.</div>'
 # Put all your custom variables here
 author = "Zypher Network"
 github = "https://github.com/zypher-game"
