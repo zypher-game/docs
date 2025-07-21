@@ -1,6 +1,6 @@
 +++
 title = "Build a ZK game"
-description = "How to build a ZK prover for game and use mining network."
+description = "How to build a ZK prover for a game and use a mining network."
 date = 2021-05-01T08:00:00+00:00
 updated = 2021-05-01T08:00:00+00:00
 draft = false
@@ -10,7 +10,7 @@ template = "docs/page.html"
 
 [extra]
 section = "mining"
-lead = 'How to build a ZK prover for game and use mining network.'
+lead = 'How to build a ZK prover for a game and use a mining network.'
 toc = true
 top = false
 +++
@@ -34,9 +34,9 @@ To address the diverse computational requirements of different ZK schemes—part
 ## 1. Build a prover
 Now you need to build a command-style prover program.
 
-1. read input file from outside
+1. read the input file from outside
 2. parses the witness or raw data in the file
-3. executes prove, and get proof and public inputs
+3. executes prove, and gets proof and public inputs
 4. serializes the proof and public inputs and stores them in the specified file
 
 Example 2048 prover:
@@ -97,13 +97,13 @@ contract Game2048Step60CircomVerifier is Initializable, OwnableUpgradeable, ERC1
         return "2048";
     }
 
-    /// show how to serialize/deseriaze the inputs params
+    /// show how to serialize/deserialize the input params
     /// e.g. "uint256,bytes32,string,bytes32[],address[],ipfs"
     function inputs() external pure returns (string memory) {
         return "uint256[]";
     }
 
-    /// show how to serialize/deserialize the publics params
+    /// show how to serialize/deserialize the public params
     /// e.g. "uint256,bytes32,string,bytes32[],address[],ipfs"
     function publics() external pure returns (string memory) {
         return "uint256[7]";
@@ -124,7 +124,7 @@ You can add more game logic to the contract.
 
 After the contract is completed, deploy the contract to the blockchain where the mining network is located, and then let's make a pull request to the official repository.
 
-## 3. Register to prover market
+## 3. Register for the prover market
 First, submit a register application in the mining network. Use this function.
 
 ```
@@ -137,7 +137,7 @@ function register(
 );
 ```
 
-And then, open a PR to mining repository in GitHub (coming soon), and provide the open source address of prover and the dockerfile compiled into docker image.
+And then, open a PR to the mining repository in GitHub (coming soon), and provide the open source address of the prover and the dockerfile compiled into docker image.
 
 Example 2048 Dockerfile:
 ```
@@ -164,16 +164,16 @@ COPY --from=builder /prover/prover .
 ENTRYPOINT ["./prover"]
 ```
 
-After complete the application, the official DAO will review the prover code and decide approve or reject.
+After completing the application, the official DAO will review the prover code and decide to approve or reject.
 
 ## 4. Release prover
-After DAO approves the prover, it will build the prover’s docker image at https://hub.docker.com/u/zyphernetwork
+After the DAO approves the prover, it will build the prover’s Docker image at https://hub.docker.com/u/zyphernetwork
 
-At this point, your game prover can be staked and minted by miners, and can be integrated to the game’s front end for players to use.
+At this point, your game prover can be staked and minted by miners, and can be integrated into the game’s front end for players to use.
 
 ## 5. Game Integration
 
-### 5.1 Create task on Task Market directly
+### 5.1 Create a task on Task Market directly
 
 First of all, you need to understand this process: players create proof task to the `TaskMarket` contract in the mining network, all miners will listen to the contract, when a new task appears, miners will accept the task immediately, and execute the proof, after the proof is completed, miner will submit to TaskMarket contract.
 
@@ -184,19 +184,19 @@ Therefore, you only need to follow the two points in the TaskMarket contract:
 function create(
     address prover,     // the prover address
     address player,     // the player address
-    uint256 fee,        // fee for this task, it can be 0 if not want give extra fee to miner
-    bytes calldata data // the raw data of this task, it uses the same format as defined in prover code.
+    uint256 fee,        // fee for this task, it can be 0 if not want to give an extra fee to the miner
+    bytes calldata data // the raw data of this task, it uses the same format as defined in the prover code.
 ) external returns(uint256); // return the task id
 ```
 
 2. Listen the result(proof) of this task.
 
 ```
-// publics and proof use the same format as defined in prover and verifier code.
+// publics and proof use the same format as defined in the prover and verifier code.
 event SubmitTask(uint256 id, bytes publics, bytes proof);
 ```
 
 After getting the proof, you can use the proof according to the logic of the game.
 
-### 5.2 Create task by third contracts
+### 5.2 Create a task by third-party contracts
 You can also use third-party contracts to complete these operations.
